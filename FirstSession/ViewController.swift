@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    let array = dataModel().data()
+    let viewModel = FilmViewModel()
     let customCell = CustomCell()
     
 
@@ -40,20 +40,24 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        return viewModel.numberOfFilms()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
-        cell.nameLabel.text = array[indexPath.row]
-        cell.numberLabel.text = String(indexPath.row + 1)
+        cell.nameLabel.text = viewModel.filmName(at: indexPath.row)
+        cell.rateLabel.text = "\(viewModel.filmRate(at: indexPath.row))"
         
         return cell
            
         
         
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
     }
 
 }

@@ -7,18 +7,14 @@
 //
 
 import Foundation
-import UIKit
 
-class dataModel {
+struct FilmDataModel {
     
-    private var array = ["a","b","c","d"]
+    public var name : String
+    var rate : Int
+    
     
  
-    public func data ()->[String]{
-        
-        return array
-        
-        
-    }
+  
     
 }

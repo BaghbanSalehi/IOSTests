@@ -12,7 +12,7 @@ class CustomCell: UITableViewCell {
     let padding: CGFloat = 5
     var background : UIView!
     var nameLabel : UILabel!
-    var numberLabel : UILabel!
+    var rateLabel : UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,15 +25,16 @@ class CustomCell: UITableViewCell {
         //background.backgroundColor = UIColor.green
         
         nameLabel = UILabel(frame: CGRect.zero)
-        nameLabel.textAlignment = .center
+        nameLabel.textAlignment = .left
         //nameLabel.textColor = UIColor.black
         contentView.addSubview(nameLabel)
         
-        numberLabel = UILabel(frame: CGRect.zero)
-        numberLabel.textAlignment = .center
+        rateLabel = UILabel(frame: CGRect.zero)
+        rateLabel.textAlignment = .left
         //numberLabel.textColor = UIColor.blue
-        contentView.addSubview(numberLabel)
+        contentView.addSubview(rateLabel)
         
+        setupConstraints()
         
         
     }
@@ -50,9 +51,28 @@ class CustomCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
        
-        numberLabel.frame = CGRect(x: padding, y: (frame.height-25)/2, width: 40, height: 25)
-        nameLabel.frame = CGRect(x: numberLabel.frame.height + 10, y: 0, width: frame.width, height: frame.height)
+//        rateLabel.frame = CGRect(x: padding, y: (frame.height-25)/2, width: 40, height: 25)
+//        nameLabel.frame = CGRect(x: rateLabel.frame.height + 10, y: 0, width: frame.width, height: frame.height)
     }
+    
+    
+    func setupConstraints(){
+        
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 0).isActive = true
+        nameLabel.leftAnchor.constraint(equalToSystemSpacingAfter: contentView.leftAnchor, multiplier: 2).isActive = true
+        nameLabel.rightAnchor.constraint(equalToSystemSpacingAfter: rateLabel.leftAnchor, multiplier: 0).isActive = true
+        nameLabel.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 0).isActive = true
+        
+        rateLabel.translatesAutoresizingMaskIntoConstraints = false
+        rateLabel.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 0).isActive = true
+        rateLabel.leftAnchor.constraint(equalToSystemSpacingAfter: nameLabel.rightAnchor, multiplier: 0).isActive = true
+        rateLabel.rightAnchor.constraint(equalToSystemSpacingAfter: contentView.rightAnchor, multiplier: 0).isActive = true
+        rateLabel.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 0).isActive = true
+        
+        
+    }
+    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
