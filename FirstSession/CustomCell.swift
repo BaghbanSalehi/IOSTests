@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import SnapKit
 
 class CustomCell: UITableViewCell {
     let padding: CGFloat = 5
     var background : UIView!
     var nameLabel : UILabel!
     var rateLabel : UILabel!
+    var castLabel : UILabel!
+    
+    let viewModel = CellViewModel()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,17 +26,30 @@ class CustomCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        //background.backgroundColor = UIColor.green
+       
+        
+        background = UIView(frame: .zero)
+        contentView.addSubview(background)
+        background.backgroundColor = .white
         
         nameLabel = UILabel(frame: CGRect.zero)
         nameLabel.textAlignment = .left
-        //nameLabel.textColor = UIColor.black
-        contentView.addSubview(nameLabel)
+        nameLabel.textColor = .black
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        background.addSubview(nameLabel)
         
         rateLabel = UILabel(frame: CGRect.zero)
         rateLabel.textAlignment = .left
-        //numberLabel.textColor = UIColor.blue
-        contentView.addSubview(rateLabel)
+        rateLabel.textColor = .blue
+        rateLabel.font = rateLabel.font.withSize(12)
+        background.addSubview(rateLabel)
+        
+        castLabel = UILabel(frame: .zero)
+        castLabel.textAlignment = .left
+        castLabel.textColor = .purple
+        castLabel.lineBreakMode = .byWordWrapping
+        castLabel.numberOfLines = 0
+        background.addSubview(castLabel)
         
         setupConstraints()
         
@@ -58,18 +75,50 @@ class CustomCell: UITableViewCell {
     
     func setupConstraints(){
         
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 0).isActive = true
-        nameLabel.leftAnchor.constraint(equalToSystemSpacingAfter: contentView.leftAnchor, multiplier: 2).isActive = true
-        nameLabel.rightAnchor.constraint(equalToSystemSpacingAfter: rateLabel.leftAnchor, multiplier: 0).isActive = true
-        nameLabel.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 0).isActive = true
+        background.snp.makeConstraints{
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+        }
         
-        rateLabel.translatesAutoresizingMaskIntoConstraints = false
-        rateLabel.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 0).isActive = true
-        rateLabel.leftAnchor.constraint(equalToSystemSpacingAfter: nameLabel.rightAnchor, multiplier: 0).isActive = true
-        rateLabel.rightAnchor.constraint(equalToSystemSpacingAfter: contentView.rightAnchor, multiplier: 0).isActive = true
-        rateLabel.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 0).isActive = true
+//        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+//        nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 0).isActive = true
+//        nameLabel.leftAnchor.constraint(equalToSystemSpacingAfter: contentView.leftAnchor, multiplier: 2).isActive = true
+//        nameLabel.rightAnchor.constraint(equalToSystemSpacingAfter: rateLabel.leftAnchor, multiplier: 0).isActive = true
+//        nameLabel.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 0).isActive = true
         
+        nameLabel.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.trailing.equalTo(rateLabel.snp.leading)
+            $0.leading.equalToSuperview().offset(10)
+            $0.height.equalTo(50)
+        }
+        
+        rateLabel.snp.makeConstraints {
+            $0.bottom.equalToSuperview()
+            $0.leading.equalTo(nameLabel.snp.trailing)
+            $0.trailing.equalToSuperview().offset(-10)
+            $0.height.equalTo(50)
+        }
+//        rateLabel.translatesAutoresizingMaskIntoConstraints = false
+//        rateLabel.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 0).isActive = true
+//        rateLabel.leftAnchor.constraint(equalToSystemSpacingAfter: nameLabel.rightAnchor, multiplier: 0).isActive = true
+//        rateLabel.rightAnchor.constraint(equalToSystemSpacingAfter: contentView.rightAnchor, multiplier: 0).isActive = true
+//        rateLabel.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 0).isActive = true
+        
+        castLabel.snp.makeConstraints {
+            $0.top.equalTo(nameLabel.snp.bottom)
+            $0.leading.equalToSuperview().offset(10)
+            $0.trailing.equalToSuperview().offset(-40)
+        }
+        
+    }
+    
+    
+    func cellConfig(_ film : FilmDataModel){
+        nameLabel.text = viewModel.getTitle(film: film)
+        rateLabel.text = viewModel.getRate(film: film)
+        castLabel.text = viewModel.getCast(film: film)
         
     }
     

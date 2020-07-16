@@ -46,8 +46,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
-        cell.nameLabel.text = viewModel.filmName(at: indexPath.row)
-        cell.rateLabel.text = "\(viewModel.filmRate(at: indexPath.row))"
+//        cell.nameLabel.text = viewModel.filmName(at: indexPath.row)
+//        cell.rateLabel.text = "\(viewModel.filmRate(at: indexPath.row))"
+        
+        cell.cellConfig(viewModel.film(at: indexPath))
         
         return cell
            
