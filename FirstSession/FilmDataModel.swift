@@ -11,11 +11,12 @@ import Foundation
 struct FilmDataModel {
     
     var name : String
-    var director : String
-    var cast : [ActorDataModel]
+    var director : Person
+    var summary : String
+    var cast : [Person]
     var year : String
     var rate : Int
-    
+    var imageName : String
     
  
   

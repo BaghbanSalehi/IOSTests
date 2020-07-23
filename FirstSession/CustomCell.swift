@@ -116,9 +116,10 @@ class CustomCell: UITableViewCell {
     
     
     func cellConfig(_ film : FilmDataModel){
-        nameLabel.text = viewModel.getTitle(film: film)
-        rateLabel.text = viewModel.getRate(film: film)
-        castLabel.text = viewModel.getCast(film: film)
+        viewModel.film = film
+        nameLabel.text = viewModel.getTitle()
+        rateLabel.text = viewModel.getRate()
+        castLabel.text = viewModel.getCast()
         
     }
     

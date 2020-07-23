@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ActorDataModel {
+struct Person {
     
     var name : String
 }

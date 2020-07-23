@@ -8,11 +8,15 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     let viewModel = FilmViewModel()
     let customCell = CustomCell()
     
+    var selectedFilm : FilmDataModel?
+
 
     let tableView = UITableView()
     
@@ -23,6 +27,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.dataSource = self
         tableView.register(CustomCell.self, forCellReuseIdentifier: "cell")
         setupTable()
+        
+    
         
         
         
@@ -48,8 +54,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
 //        cell.nameLabel.text = viewModel.filmName(at: indexPath.row)
 //        cell.rateLabel.text = "\(viewModel.filmRate(at: indexPath.row))"
-        
-        cell.cellConfig(viewModel.film(at: indexPath))
+        let film = viewModel.film(at: indexPath)
+        cell.cellConfig(film)
         
         return cell
            
@@ -57,7 +63,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedFilm = viewModel.film(at: indexPath)
+        let detailViewController = DetailViewController()
+        detailViewController.viewModel.film = selectedFilm
+        present(detailViewController, animated: true)
+            
+        
+      
+        
+        
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
