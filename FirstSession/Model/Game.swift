@@ -8,12 +8,13 @@
 
 import Foundation
 
-struct FilmDataModel {
+struct Game {
     
     var name : String
-    var director : Person
+    var genre : String
     var summary : String
-    var cast : [Person]
+    var developer : Company
+    var publisher : Company
     var year : String
     var rate : Int
     var imageName : String

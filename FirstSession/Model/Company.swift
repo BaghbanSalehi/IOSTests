@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Person {
+struct Company {
     
     var name : String
 }

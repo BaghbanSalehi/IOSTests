@@ -110,8 +110,8 @@ class DetailViewController: UIViewController {
         rateLabel.text = viewModel.getRate()
         titleLabel.text = viewModel.getTitle()
         describText.text = viewModel.getSummary()
-        castLabel.text = viewModel.getCast()
-        directorLabel.text = viewModel.getDirector()
+//        castLabel.text = viewModel.getCast()
+//        directorLabel.text = viewModel.getDirector()
         
     }
     

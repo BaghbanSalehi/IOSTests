@@ -10,7 +10,7 @@ import Foundation
 
 class DetailViewModel {
     
-    var film : FilmDataModel?
+    var film : Game?
     
     
     func getTitle() -> String{
@@ -26,18 +26,18 @@ class DetailViewModel {
 
         return "\(film.rate)/10"
     }
-    func getCast() -> String {
-        guard let film = film else{
-            return ""
-        }
-
-        var cast = ""
-        for i in film.cast{
-            cast += "\(i.name), "
-            
-        }
-        return cast
-    }
+//    func getCast() -> String {
+//        guard let film = film else{
+//            return ""
+//        }
+//
+//        var cast = ""
+//        for i in film.cast{
+//            cast += "\(i.name), "
+//
+//        }
+//        return cast
+//    }
     
     func getSummary() -> String {
         guard let film = film else{
@@ -47,13 +47,13 @@ class DetailViewModel {
         return film.summary
     }
     
-    func getDirector() -> String {
-        guard let film = film else{
-            return ""
-        }
-
-        return film.director.name
-    }
+//    func getDirector() -> String {
+//        guard let film = film else{
+//            return ""
+//        }
+//
+//        return film.director.name
+//    }
     func getImage() -> String {
         guard let film = film else{
             return ""

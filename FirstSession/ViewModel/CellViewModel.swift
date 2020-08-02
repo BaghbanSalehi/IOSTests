@@ -10,7 +10,7 @@ import Foundation
 
 class CellViewModel {
     
-    var film : FilmDataModel?
+    var film : Game?
     
     func getTitle() -> String{
         guard let film = film else{
@@ -24,16 +24,16 @@ class CellViewModel {
         }
         return "\(film.rate)/10"
     }
-    func getCast() -> String {
-        guard let film = film else{
-            return ""
-        }
-        var cast = ""
-        for i in film.cast{
-           cast += "\(i.name), "
-            
-        }
-        return cast
-    }
+//    func getCast() -> String {
+//        guard let film = film else{
+//            return ""
+//        }
+//        var cast = ""
+//        for i in film.cast{
+//           cast += "\(i.name), "
+//            
+//        }
+//        return cast
+//    }
     
 }

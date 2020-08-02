@@ -10,12 +10,12 @@ import UIKit
 
 
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    let viewModel = FilmViewModel()
+    let viewModel = GameViewModel()
     let customCell = CustomCell()
     
-    var selectedFilm : FilmDataModel?
+    var selectedFilm : Game?
 
 
     let tableView = UITableView()
