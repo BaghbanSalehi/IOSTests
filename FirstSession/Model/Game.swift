@@ -11,13 +11,14 @@ import Foundation
 struct Game {
     
     var name : String
-    var genre : String
+    var characteristics : String
     var summary : String
     var developer : Company
     var publisher : Company
     var year : String
     var rate : Int
     var imageName : String
+    var url : String
     
  
   
