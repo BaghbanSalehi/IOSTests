@@ -60,41 +60,33 @@ class DetailViewController: UIViewController {
         image.snp.makeConstraints{
             $0.top.equalToSuperview()
             $0.trailing.leading.equalToSuperview()
-            $0.bottom.equalTo(titleLabel.snp.top)
-            $0.height.equalTo(80)
+            $0.height.equalTo(200)
         }
         rateLabel.snp.makeConstraints{
             $0.bottom.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(50)
+            $0.trailing.leading.equalToSuperview().inset(20)
         }
         
         titleLabel.snp.makeConstraints{
-            $0.top.equalTo(image.snp.bottom)
-            $0.trailing.leading.equalToSuperview()
-            $0.bottom.equalTo(describText.snp.top)
-            $0.height.equalTo(50)
+            $0.top.equalTo(image.snp.bottom).offset(20)
+            $0.trailing.leading.equalToSuperview().inset(20)
+        
         }
         
         describText.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom)
-            $0.trailing.leading.equalToSuperview()
-            $0.bottom.equalTo(castLabel.snp.top)
-            $0.height.equalTo(50)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+            $0.trailing.leading.equalToSuperview().inset(20)
+            $0.height.equalTo(80)
         }
         
         castLabel.snp.makeConstraints{
-            $0.top.equalTo(describText.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(directorLabel.snp.top)
-            $0.height.equalTo(50)
+            $0.top.equalTo(describText.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
         
         directorLabel.snp.makeConstraints{
             $0.top.equalTo(castLabel.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(250)
-            $0.height.equalTo(50)
+            $0.leading.trailing.equalToSuperview().inset(20)
             
         }
         

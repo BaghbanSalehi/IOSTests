@@ -46,7 +46,7 @@ class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfFilms()
+        return viewModel.numberOfGames()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,7 +54,7 @@ class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
 //        cell.nameLabel.text = viewModel.filmName(at: indexPath.row)
 //        cell.rateLabel.text = "\(viewModel.filmRate(at: indexPath.row))"
-        let film = viewModel.film(at: indexPath)
+        let film = viewModel.game(at: indexPath)
         cell.cellConfig(film)
         
         return cell
@@ -64,7 +64,7 @@ class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewD
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedFilm = viewModel.film(at: indexPath)
+        selectedFilm = viewModel.game(at: indexPath)
         let detailViewController = DetailViewController()
         detailViewController.viewModel.film = selectedFilm
         present(detailViewController, animated: true)

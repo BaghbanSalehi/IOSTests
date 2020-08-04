@@ -13,8 +13,9 @@ class CustomCell: UITableViewCell {
     let padding: CGFloat = 5
     var background : UIView!
     var nameLabel : UILabel!
-    var rateLabel : UILabel!
-    var castLabel : UILabel!
+    var characteristicLabel : UILabel!
+    var pic : UIImageView!
+    
     
     let viewModel = CellViewModel()
 
@@ -38,18 +39,16 @@ class CustomCell: UITableViewCell {
         nameLabel.font = UIFont.boldSystemFont(ofSize: 20)
         background.addSubview(nameLabel)
         
-        rateLabel = UILabel(frame: CGRect.zero)
-        rateLabel.textAlignment = .left
-        rateLabel.textColor = .blue
-        rateLabel.font = rateLabel.font.withSize(12)
-        background.addSubview(rateLabel)
+        characteristicLabel = UILabel(frame: .zero)
+        characteristicLabel.textAlignment = .left
+        background.addSubview(characteristicLabel)
         
-        castLabel = UILabel(frame: .zero)
-        castLabel.textAlignment = .left
-        castLabel.textColor = .purple
-        castLabel.lineBreakMode = .byWordWrapping
-        castLabel.numberOfLines = 0
-        background.addSubview(castLabel)
+        pic = UIImageView(frame: .zero)
+        pic.contentMode = .scaleAspectFit
+        pic.clipsToBounds = false
+        background.addSubview(pic)
+        
+
         
         setupConstraints()
         
@@ -87,39 +86,39 @@ class CustomCell: UITableViewCell {
 //        nameLabel.rightAnchor.constraint(equalToSystemSpacingAfter: rateLabel.leftAnchor, multiplier: 0).isActive = true
 //        nameLabel.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 0).isActive = true
         
+        pic.snp.makeConstraints{
+            $0.leading.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.height.equalTo(80)
+            
+        }
+        
         nameLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.trailing.equalTo(rateLabel.snp.leading)
-            $0.leading.equalToSuperview().offset(10)
-            $0.height.equalTo(50)
+            $0.leading.equalTo(pic.snp.trailing)
+            $0.trailing.equalToSuperview()
+            
         }
         
-        rateLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview()
-            $0.leading.equalTo(nameLabel.snp.trailing)
-            $0.trailing.equalToSuperview().offset(-10)
-            $0.height.equalTo(50)
-        }
-//        rateLabel.translatesAutoresizingMaskIntoConstraints = false
-//        rateLabel.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 0).isActive = true
-//        rateLabel.leftAnchor.constraint(equalToSystemSpacingAfter: nameLabel.rightAnchor, multiplier: 0).isActive = true
-//        rateLabel.rightAnchor.constraint(equalToSystemSpacingAfter: contentView.rightAnchor, multiplier: 0).isActive = true
-//        rateLabel.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 0).isActive = true
-        
-        castLabel.snp.makeConstraints {
+        characteristicLabel.snp.makeConstraints{
             $0.top.equalTo(nameLabel.snp.bottom)
-            $0.leading.equalToSuperview().offset(10)
-            $0.trailing.equalToSuperview().offset(-40)
+            $0.leading.equalTo(pic.snp.trailing)
+            $0.trailing.equalToSuperview()
+            
         }
+        
+
+        
         
     }
     
     
-    func cellConfig(_ film : Game){
-        viewModel.film = film
+    func cellConfig(_ game : Game){
+        viewModel.game = game
         nameLabel.text = viewModel.getTitle()
-        rateLabel.text = viewModel.getRate()
-//        castLabel.text = viewModel.getCast()
+        characteristicLabel.text = viewModel.getCharacter()
+        pic.image = UIImage(named: viewModel.getImage())
+ 
         
     }
     
