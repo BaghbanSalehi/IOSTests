@@ -41,10 +41,12 @@ class CustomCell: UITableViewCell {
         
         characteristicLabel = UILabel(frame: .zero)
         characteristicLabel.textAlignment = .left
+        characteristicLabel.lineBreakMode = .byWordWrapping
+        characteristicLabel.numberOfLines = 0
         background.addSubview(characteristicLabel)
         
         pic = UIImageView(frame: .zero)
-        pic.contentMode = .scaleAspectFit
+        pic.contentMode = .scaleToFill
         pic.clipsToBounds = false
         background.addSubview(pic)
         
@@ -87,22 +89,23 @@ class CustomCell: UITableViewCell {
 //        nameLabel.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 0).isActive = true
         
         pic.snp.makeConstraints{
-            $0.leading.equalToSuperview()
-            $0.leading.equalToSuperview()
+            $0.top.equalToSuperview().offset(15)
+            $0.leading.equalToSuperview().inset(15)
             $0.height.equalTo(80)
+            $0.width.equalTo(80)
             
         }
         
         nameLabel.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalTo(pic.snp.trailing)
+            $0.top.equalToSuperview().offset(10)
+            $0.leading.equalTo(pic.snp.trailing).offset(5)
             $0.trailing.equalToSuperview()
             
         }
         
         characteristicLabel.snp.makeConstraints{
             $0.top.equalTo(nameLabel.snp.bottom)
-            $0.leading.equalTo(pic.snp.trailing)
+            $0.leading.equalTo(pic.snp.trailing).offset(5)
             $0.trailing.equalToSuperview()
             
         }

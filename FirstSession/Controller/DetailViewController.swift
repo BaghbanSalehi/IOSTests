@@ -16,9 +16,12 @@ class DetailViewController: UIViewController {
     
     var image : UIImageView!
     var titleLabel : UILabel!
+    var characteristicLabel : UILabel!
+    var developersLabel : UILabel!
+    var publisherLabel : UILabel!
+    var moreInfoLable: UILabel!
+    var goToStoreButton: UIButton!
     var describText : UITextView!
-    var castLabel : UILabel!
-    var directorLabel : UILabel!
     var rateLabel : UILabel!
     
     let viewModel = DetailViewModel()
@@ -28,7 +31,7 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .white
         
         image = UIImageView(frame: .zero)
-        //image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleToFill
         view.addSubview(image)
         
         titleLabel = UILabel(frame: .zero)
@@ -38,11 +41,22 @@ class DetailViewController: UIViewController {
         describText = UITextView(frame: .zero)
         view.addSubview(describText)
         
-        castLabel = UILabel(frame: .zero)
-        view.addSubview(castLabel)
+        characteristicLabel = UILabel(frame: .zero)
+        characteristicLabel.lineBreakMode = .byWordWrapping
+        characteristicLabel.numberOfLines = 0
+        view.addSubview(characteristicLabel)
         
-        directorLabel = UILabel(frame: .zero)
-        view.addSubview(directorLabel)
+        developersLabel = UILabel(frame: .zero)
+        view.addSubview(developersLabel)
+        
+        publisherLabel = UILabel(frame: .zero)
+        view.addSubview(publisherLabel)
+        
+        moreInfoLable = UILabel(frame: .zero)
+        view.addSubview(moreInfoLable)
+        
+        goToStoreButton = UIButton(frame: .zero)
+        view.addSubview(goToStoreButton)
         
         rateLabel = UILabel(frame: .zero)
         rateLabel.textColor = .white
@@ -73,19 +87,24 @@ class DetailViewController: UIViewController {
         
         }
         
-        describText.snp.makeConstraints{
+        characteristicLabel.snp.makeConstraints{
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+            $0.trailing.leading.equalToSuperview().inset(20)
+        }
+        
+        describText.snp.makeConstraints{
+            $0.top.equalTo(characteristicLabel.snp.bottom).offset(20)
             $0.trailing.leading.equalToSuperview().inset(20)
             $0.height.equalTo(80)
         }
         
-        castLabel.snp.makeConstraints{
+        developersLabel.snp.makeConstraints{
             $0.top.equalTo(describText.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
-        directorLabel.snp.makeConstraints{
-            $0.top.equalTo(castLabel.snp.bottom)
+        publisherLabel.snp.makeConstraints{
+            $0.top.equalTo(developersLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview().inset(20)
             
         }
@@ -102,8 +121,11 @@ class DetailViewController: UIViewController {
         rateLabel.text = viewModel.getRate()
         titleLabel.text = viewModel.getTitle()
         describText.text = viewModel.getSummary()
-//        castLabel.text = viewModel.getCast()
-//        directorLabel.text = viewModel.getDirector()
+        characteristicLabel.text = viewModel.getCharacteristics()
+        developersLabel.text = viewModel.getDevelopers()
+        publisherLabel.text = viewModel.getPublisher()
+        
+
         
     }
     

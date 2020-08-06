@@ -66,7 +66,7 @@ class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedFilm = viewModel.game(at: indexPath)
         let detailViewController = DetailViewController()
-        detailViewController.viewModel.film = selectedFilm
+        detailViewController.viewModel.game = selectedFilm
         present(detailViewController, animated: true)
             
         

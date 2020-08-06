@@ -10,56 +10,59 @@ import Foundation
 
 class DetailViewModel {
     
-    var film : Game?
+    var game : Game?
     
     
     func getTitle() -> String{
-        guard let film = film else{
+        guard let game = game else{
             return ""
         }
-        return "\(film.name)(\(film.year))"
+        return "\(game.name)(\(game.year))"
     }
     func getRate() -> String {
-        guard let film = film else{
+        guard let game = game else{
             return ""
         }
 
-        return "\(film.rate)/10"
+        return "\(game.rate)/10"
     }
-//    func getCast() -> String {
-//        guard let film = film else{
-//            return ""
-//        }
-//
-//        var cast = ""
-//        for i in film.cast{
-//            cast += "\(i.name), "
-//
-//        }
-//        return cast
-//    }
+func getDevelopers() -> String {
+    guard let game = game else{
+        return ""
+    }
+
+    return "Developer : \(game.developer.name)"
+}
     
     func getSummary() -> String {
-        guard let film = film else{
+        guard let game = game else{
             return ""
         }
 
-        return film.summary
+        return game.summary
     }
     
-//    func getDirector() -> String {
-//        guard let film = film else{
-//            return ""
-//        }
-//
-//        return film.director.name
-//    }
-    func getImage() -> String {
-        guard let film = film else{
+    func getPublisher() -> String {
+        guard let game = game else{
             return ""
         }
-        return film.imageName
 
+        return "Publisher : \(game.publisher.name)"
+    }
+    func getImage() -> String {
+        guard let game = game else{
+            return ""
+        }
+        return game.imageName
+
+    }
+    
+    func getCharacteristics() -> String {
+        guard let game = game else{
+            return ""
+        }
+
+        return game.characteristics
     }
     
 }
