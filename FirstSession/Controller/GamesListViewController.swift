@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ChameleonFramework
 
 
 class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -15,17 +15,18 @@ class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewD
     let viewModel = GameViewModel()
     let customCell = CustomCell()
     
-    var selectedFilm : Game?
+    var selectedGame : Game?
 
 
     let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CustomCell.self, forCellReuseIdentifier: "cell")
+        tableView.separatorStyle = .none
         setupTable()
         
     
@@ -52,8 +53,6 @@ class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
-//        cell.nameLabel.text = viewModel.filmName(at: indexPath.row)
-//        cell.rateLabel.text = "\(viewModel.filmRate(at: indexPath.row))"
         let film = viewModel.game(at: indexPath)
         cell.cellConfig(film)
         
@@ -64,10 +63,10 @@ class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewD
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedFilm = viewModel.game(at: indexPath)
+        selectedGame = viewModel.game(at: indexPath)
         let detailViewController = DetailViewController()
-        detailViewController.viewModel.game = selectedFilm
-        present(detailViewController, animated: true)
+        detailViewController.viewModel.game = selectedGame
+        navigationController?.pushViewController(detailViewController, animated: true)
             
         
       

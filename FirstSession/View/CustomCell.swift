@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import ChameleonFramework
 
 class CustomCell: UITableViewCell {
     let padding: CGFloat = 5
@@ -31,16 +32,18 @@ class CustomCell: UITableViewCell {
         
         background = UIView(frame: .zero)
         contentView.addSubview(background)
-        background.backgroundColor = .white
+        background.backgroundColor = RandomFlatColor()
+        
         
         nameLabel = UILabel(frame: CGRect.zero)
         nameLabel.textAlignment = .left
-        nameLabel.textColor = .black
+        nameLabel.textColor = ContrastColorOf(background.backgroundColor!, returnFlat: true)
         nameLabel.font = UIFont.boldSystemFont(ofSize: 20)
         background.addSubview(nameLabel)
         
         characteristicLabel = UILabel(frame: .zero)
         characteristicLabel.textAlignment = .left
+        characteristicLabel.textColor = ContrastColorOf(background.backgroundColor!, returnFlat: true)
         characteristicLabel.lineBreakMode = .byWordWrapping
         characteristicLabel.numberOfLines = 0
         background.addSubview(characteristicLabel)

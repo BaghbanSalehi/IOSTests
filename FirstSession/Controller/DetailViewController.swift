@@ -29,7 +29,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+        //navigationController?.setNavigationBarHidden(true, animated: true)
         image = UIImageView(frame: .zero)
         image.contentMode = .scaleToFill
         view.addSubview(image)
@@ -39,6 +39,8 @@ class DetailViewController: UIViewController {
         view.addSubview(titleLabel)
         
         describText = UITextView(frame: .zero)
+        describText.isEditable = false
+        describText.font = .systemFont(ofSize: 18)
         view.addSubview(describText)
         
         characteristicLabel = UILabel(frame: .zero)
@@ -53,9 +55,13 @@ class DetailViewController: UIViewController {
         view.addSubview(publisherLabel)
         
         moreInfoLable = UILabel(frame: .zero)
+        moreInfoLable.lineBreakMode = .byWordWrapping
+        moreInfoLable.numberOfLines = 0
         view.addSubview(moreInfoLable)
         
         goToStoreButton = UIButton(frame: .zero)
+        goToStoreButton.backgroundColor = UIColor(hexString: "#00CDCD")
+        goToStoreButton.setTitleColor(.black, for: .normal)
         view.addSubview(goToStoreButton)
         
         rateLabel = UILabel(frame: .zero)
@@ -72,7 +78,7 @@ class DetailViewController: UIViewController {
     func setupConstraint(){
         
         image.snp.makeConstraints{
-            $0.top.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.trailing.leading.equalToSuperview()
             $0.height.equalTo(200)
         }
@@ -109,6 +115,19 @@ class DetailViewController: UIViewController {
             
         }
         
+        moreInfoLable.snp.makeConstraints{
+            $0.top.equalTo(publisherLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
+        }
+        
+        goToStoreButton.snp.makeConstraints{
+            $0.top.equalTo(moreInfoLable.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(50)
+           
+            
+            }
+        
         
         
     }
@@ -124,20 +143,17 @@ class DetailViewController: UIViewController {
         characteristicLabel.text = viewModel.getCharacteristics()
         developersLabel.text = viewModel.getDevelopers()
         publisherLabel.text = viewModel.getPublisher()
+        moreInfoLable.text = "Do you want to know more and buy this game?"
+        goToStoreButton.setTitle("Yes,Let's go", for: .normal)
+        goToStoreButton.addTarget(self, action: #selector(goToStoreButtonPressed), for: .touchUpInside)
         
 
         
+    }
+    @objc func goToStoreButtonPressed(){
+        UIApplication.shared.open(URL(string: viewModel.getUrl())!)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -18,9 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let homeViewController = GamesListViewController()
+        let navigationController = UINavigationController()
+        let homeViewController = GamesListViewController(nibName: nil, bundle: nil)
+        navigationController.viewControllers = [homeViewController]
         homeViewController.view.backgroundColor = UIColor.white
-        window?.rootViewController = homeViewController
+        window?.rootViewController = navigationController
         return true
     }
 

@@ -64,6 +64,13 @@ func getDevelopers() -> String {
 
         return game.characteristics
     }
+    func getUrl() -> String {
+        guard let game = game else{
+            return ""
+        }
+
+        return game.url
+    }
     
 }
 
