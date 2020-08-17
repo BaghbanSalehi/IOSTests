@@ -8,13 +8,14 @@
 
 import UIKit
 import SnapKit
+import AVKit
 
 
-class DetailViewController: UIViewController {
-
+class DetailViewController: UIViewController{
     
     
-    var image : UIImageView!
+    
+    var videoPlayerHolder : UIView!
     var titleLabel : UILabel!
     var characteristicLabel : UILabel!
     var developersLabel : UILabel!
@@ -23,16 +24,31 @@ class DetailViewController: UIViewController {
     var goToStoreButton: UIButton!
     var describText : UITextView!
     var rateLabel : UILabel!
+    var player = AVPlayer()
+    let playerController = AVPlayerViewController()
+    let screenSize = UIScreen.main.bounds
+   
+   
+    
+    
     
     let viewModel = DetailViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        //navigationController?.setNavigationBarHidden(true, animated: true)
-        image = UIImageView(frame: .zero)
-        image.contentMode = .scaleToFill
-        view.addSubview(image)
+        tabBarController?.tabBar.isHidden = false
+               
+     
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        videoPlayerHolder = UIView(frame: .zero)
+        view.addSubview(videoPlayerHolder)
+        
+    
+        
+        playerController.view.frame = videoPlayerHolder.bounds
+        videoPlayerHolder.addSubview(playerController.view)
+        self.addChild(playerController) 
         
         titleLabel = UILabel(frame: .zero)
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
@@ -66,21 +82,25 @@ class DetailViewController: UIViewController {
         
         rateLabel = UILabel(frame: .zero)
         rateLabel.textColor = .white
-        image.addSubview(rateLabel)
+        videoPlayerHolder.addSubview(rateLabel)
         
         setupConstraint()
         config()
-        
+
         
         
     }
+
+   
+  
     
     func setupConstraint(){
         
-        image.snp.makeConstraints{
+        videoPlayerHolder.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.trailing.leading.equalToSuperview()
-            $0.height.equalTo(200)
+            $0.height.equalTo(screenSize.height * 0.25)
+            
         }
         rateLabel.snp.makeConstraints{
             $0.bottom.equalToSuperview()
@@ -88,9 +108,9 @@ class DetailViewController: UIViewController {
         }
         
         titleLabel.snp.makeConstraints{
-            $0.top.equalTo(image.snp.bottom).offset(20)
+            $0.top.equalTo(videoPlayerHolder.snp.bottom).offset(20)
             $0.trailing.leading.equalToSuperview().inset(20)
-        
+            
         }
         
         characteristicLabel.snp.makeConstraints{
@@ -101,7 +121,7 @@ class DetailViewController: UIViewController {
         describText.snp.makeConstraints{
             $0.top.equalTo(characteristicLabel.snp.bottom).offset(20)
             $0.trailing.leading.equalToSuperview().inset(20)
-            $0.height.equalTo(80)
+            $0.height.equalTo(screenSize.height * 0.10)
         }
         
         developersLabel.snp.makeConstraints{
@@ -124,9 +144,9 @@ class DetailViewController: UIViewController {
             $0.top.equalTo(moreInfoLable.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(50)
-           
             
-            }
+            
+        }
         
         
         
@@ -135,8 +155,10 @@ class DetailViewController: UIViewController {
     
     
     func config(){
-      
-        image.image = UIImage(named: viewModel.getImage())
+       
+        player = AVPlayer(url: viewModel.getVideoUrl())
+        playerController.player = player
+        playerController.player?.play()
         rateLabel.text = viewModel.getRate()
         titleLabel.text = viewModel.getTitle()
         describText.text = viewModel.getSummary()
@@ -146,8 +168,7 @@ class DetailViewController: UIViewController {
         moreInfoLable.text = "Do you want to know more and buy this game?"
         goToStoreButton.setTitle("Yes,Let's go", for: .normal)
         goToStoreButton.addTarget(self, action: #selector(goToStoreButtonPressed), for: .touchUpInside)
-        
-
+     
         
     }
     @objc func goToStoreButtonPressed(){
@@ -155,5 +176,12 @@ class DetailViewController: UIViewController {
     }
     
 
-
+//     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+//         let tabBarIndex = tabBarController.selectedIndex
+//         if tabBarIndex == 0 {
+//             print("tabBarItem Selected")
+//         }
+//     }
+    
+    
 }

@@ -72,8 +72,6 @@ class CustomCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
        
-//        rateLabel.frame = CGRect(x: padding, y: (frame.height-25)/2, width: 40, height: 25)
-//        nameLabel.frame = CGRect(x: rateLabel.frame.height + 10, y: 0, width: frame.width, height: frame.height)
     }
     
     
@@ -83,19 +81,15 @@ class CustomCell: UITableViewCell {
             $0.top.equalToSuperview()
             $0.bottom.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
+           
         }
         
-//        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-//        nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 0).isActive = true
-//        nameLabel.leftAnchor.constraint(equalToSystemSpacingAfter: contentView.leftAnchor, multiplier: 2).isActive = true
-//        nameLabel.rightAnchor.constraint(equalToSystemSpacingAfter: rateLabel.leftAnchor, multiplier: 0).isActive = true
-//        nameLabel.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 0).isActive = true
-        
         pic.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(15)
-            $0.leading.equalToSuperview().inset(15)
-            $0.height.equalTo(80)
+            $0.top.equalToSuperview().offset(5)
+            $0.leading.equalToSuperview().inset(5)
+            $0.height.equalTo(100)
             $0.width.equalTo(80)
+            //$0.bottom.equalToSuperview().inset(5)
             
         }
         
@@ -103,6 +97,7 @@ class CustomCell: UITableViewCell {
             $0.top.equalToSuperview().offset(10)
             $0.leading.equalTo(pic.snp.trailing).offset(5)
             $0.trailing.equalToSuperview()
+           
             
         }
         
@@ -110,6 +105,8 @@ class CustomCell: UITableViewCell {
             $0.top.equalTo(nameLabel.snp.bottom)
             $0.leading.equalTo(pic.snp.trailing).offset(5)
             $0.trailing.equalToSuperview()
+            
+            
             
         }
         
@@ -124,6 +121,7 @@ class CustomCell: UITableViewCell {
         nameLabel.text = viewModel.getTitle()
         characteristicLabel.text = viewModel.getCharacter()
         pic.image = UIImage(named: viewModel.getImage())
+       
  
         
     }

@@ -72,5 +72,13 @@ func getDevelopers() -> String {
         return game.url
     }
     
+    func getVideoUrl() -> URL {
+        guard let game = game else{
+           return URL(string: "")!
+        }
+
+        return URL(string: game.videoUrl)!
+    }
+    
 }
 

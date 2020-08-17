@@ -1,0 +1,6 @@
+framework module Pods_FirstSession {
+  umbrella header "Pods-FirstSession-umbrella.h"
+
+  export *
+  module * { export * }
+}

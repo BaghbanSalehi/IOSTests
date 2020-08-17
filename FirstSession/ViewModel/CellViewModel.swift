@@ -16,7 +16,7 @@ class CellViewModel {
         guard let game = game else{
             return ""
         }
-        return "\(game.name)(\(game.year))"
+        return "\(game.name)"
     }
     
     func getCharacter() -> String{

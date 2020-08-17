@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
 
@@ -18,11 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        let tabBar = UITabBarController()
         let navigationController = UINavigationController()
-        let homeViewController = GamesListViewController(nibName: nil, bundle: nil)
+        let homeViewController = GamesListViewController()
+        homeViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "house"), tag: 0)
         navigationController.viewControllers = [homeViewController]
-        homeViewController.view.backgroundColor = UIColor.white
-        window?.rootViewController = navigationController
+        tabBar.viewControllers = [navigationController]
+        homeViewController.view.backgroundColor = .white
+        window?.rootViewController = tabBar
+        
         return true
     }
 
@@ -48,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+   
 
 }
 

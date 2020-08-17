@@ -10,15 +10,16 @@ import Foundation
 
 struct Game {
     
-    var name : String
-    var characteristics : String
-    var summary : String
-    var developer : Company
-    var publisher : Company
-    var year : String
-    var rate : Int
-    var imageName : String
-    var url : String
+    var name = String()
+    var characteristics = String()
+    var summary = String()
+    var developer = Company()
+    var publisher = Company()
+    var year = String()
+    var rate = Int()
+    var imageName = String()
+    var url = String()
+    var videoUrl = String()
     
  
   

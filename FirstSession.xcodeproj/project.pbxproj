@@ -19,6 +19,7 @@
 		E49788B9249AA5CE00F07235 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49788B7249AA5CE00F07235 /* LaunchScreen.storyboard */; };
 		E4ED79A224C0802E0028700F /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED79A124C0802E0028700F /* CellViewModel.swift */; };
 		E4ED79A424C0AB310028700F /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED79A324C0AB310028700F /* Company.swift */; };
+		E4F966FA24E96B8F00FAE5A9 /* gamesList.json in Resources */ = {isa = PBXBuildFile; fileRef = E4F966F924E96B8F00FAE5A9 /* gamesList.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +31,7 @@
 		E466186424B7318000234C24 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E49386CE24C9F74400652A17 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E49386D024C9F77300652A17 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		E49788AB249AA5CC00F07235 /* FirstSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49788AB249AA5CC00F07235 /* PcGamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PcGamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49788AE249AA5CC00F07235 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E49788B0249AA5CC00F07235 /* GamesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
 		E49788B5249AA5CE00F07235 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +39,7 @@
 		E49788BA249AA5CE00F07235 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4ED79A124C0802E0028700F /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		E4ED79A324C0AB310028700F /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		E4F966F924E96B8F00FAE5A9 /* gamesList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gamesList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E44A175E24E93B6B00829012 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E4F966F924E96B8F00FAE5A9 /* gamesList.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E49788A2249AA5CC00F07235 = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +131,7 @@
 		E49788AC249AA5CC00F07235 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E49788AB249AA5CC00F07235 /* FirstSession.app */,
+				E49788AB249AA5CC00F07235 /* PcGamer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +139,7 @@
 		E49788AD249AA5CC00F07235 /* FirstSession */ = {
 			isa = PBXGroup;
 			children = (
+				E44A175E24E93B6B00829012 /* Resources */,
 				1D93AF7B24D6AC700068122A /* View */,
 				1D93AF7A24D6AAA70068122A /* Controller */,
 				1D93AF7924D6AA4E0068122A /* ViewModel */,
@@ -157,7 +168,7 @@
 			);
 			name = FirstSession;
 			productName = FirstSession;
-			productReference = E49788AB249AA5CC00F07235 /* FirstSession.app */;
+			productReference = E49788AB249AA5CC00F07235 /* PcGamer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +183,7 @@
 				TargetAttributes = {
 					E49788AA249AA5CC00F07235 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1160;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -200,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E49788B9249AA5CE00F07235 /* LaunchScreen.storyboard in Resources */,
+				E4F966FA24E96B8F00FAE5A9 /* gamesList.json in Resources */,
 				E49788B6249AA5CE00F07235 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,10 +419,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.epita.FirstSession;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Game4Life.PcGamer;
+				PRODUCT_NAME = PcGamer;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -426,10 +438,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.epita.FirstSession;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Game4Life.PcGamer;
+				PRODUCT_NAME = PcGamer;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
