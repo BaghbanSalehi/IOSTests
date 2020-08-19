@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 import AVKit
-
+import RealmSwift
 
 class DetailViewController: UIViewController{
     
@@ -22,13 +22,14 @@ class DetailViewController: UIViewController{
     var publisherLabel : UILabel!
     var moreInfoLable: UILabel!
     var goToStoreButton: UIButton!
+    var wishListButoon : UIButton!
     var describText : UITextView!
     var rateLabel : UILabel!
     var player = AVPlayer()
     let playerController = AVPlayerViewController()
     let screenSize = UIScreen.main.bounds
-   
-   
+    var tabbar = UITabBar()
+    let realm = try! Realm()
     
     
     
@@ -37,14 +38,14 @@ class DetailViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        tabBarController?.tabBar.isHidden = false
-               
-     
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
         videoPlayerHolder = UIView(frame: .zero)
         view.addSubview(videoPlayerHolder)
+        tabbar.delegate = self
+        view.addSubview(tabbar)
         
-    
+        
         
         playerController.view.frame = videoPlayerHolder.bounds
         videoPlayerHolder.addSubview(playerController.view)
@@ -84,18 +85,31 @@ class DetailViewController: UIViewController{
         rateLabel.textColor = .white
         videoPlayerHolder.addSubview(rateLabel)
         
+        wishListButoon = UIButton(frame: .zero)
+        wishListButoon.backgroundColor = UIColor(hexString: "#00CDCD")
+        wishListButoon.setTitleColor(.black, for: .normal)
+        view.addSubview(wishListButoon)
+        
         setupConstraint()
         config()
-
+        
         
         
     }
 
-   
-  
+ 
+        
+         
+    
+    
+    
     
     func setupConstraint(){
-        
+        tabbar.snp.makeConstraints{
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            $0.trailing.leading.equalToSuperview()
+            
+        }
         videoPlayerHolder.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.trailing.leading.equalToSuperview()
@@ -143,7 +157,14 @@ class DetailViewController: UIViewController{
         goToStoreButton.snp.makeConstraints{
             $0.top.equalTo(moreInfoLable.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(50)
+            $0.height.equalTo(screenSize.height * 0.05)
+            
+            
+        }
+        wishListButoon.snp.makeConstraints{
+            $0.top.equalTo(goToStoreButton.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(screenSize.height * 0.05)
             
             
         }
@@ -155,7 +176,7 @@ class DetailViewController: UIViewController{
     
     
     func config(){
-       
+        viewModel.loadData()
         player = AVPlayer(url: viewModel.getVideoUrl())
         playerController.player = player
         playerController.player?.play()
@@ -168,20 +189,54 @@ class DetailViewController: UIViewController{
         moreInfoLable.text = "Do you want to know more and buy this game?"
         goToStoreButton.setTitle("Yes,Let's go", for: .normal)
         goToStoreButton.addTarget(self, action: #selector(goToStoreButtonPressed), for: .touchUpInside)
-     
+        
+        if !viewModel.alreadyInWishList(){
+            wishListButoon.setTitle("Add this to wish list", for: .normal)
+            wishListButoon.addTarget(self, action: #selector(addToWishList), for: .touchUpInside)
+        }else{
+            wishListButoon.setTitle("In wish list", for: .normal)
+            wishListButoon.isEnabled = false
+            wishListButoon.setTitleColor(.gray, for: .disabled)
+        }
+        
+        let goHome = UITabBarItem(title: "", image: UIImage(named: "house"), tag: 0)
+        let goWish = UITabBarItem(title: "", image: UIImage(named: "wish"), tag: 1)
+        tabbar.items = [goHome,goWish]
+        
+        
         
     }
     @objc func goToStoreButtonPressed(){
         UIApplication.shared.open(URL(string: viewModel.getUrl())!)
     }
     
+    @objc func addToWishList(){
+        viewModel.writeData()
+        wishListButoon.setTitle("Added to wish list", for: .normal)
+        wishListButoon.isEnabled = false
+        wishListButoon.setTitleColor(.gray, for: .disabled)
+    }
+    
+    
+    
+    
+    
+    
+}
 
-//     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-//         let tabBarIndex = tabBarController.selectedIndex
-//         if tabBarIndex == 0 {
-//             print("tabBarItem Selected")
-//         }
-//     }
+extension DetailViewController : UITabBarControllerDelegate,UITabBarDelegate
+{
     
-    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.tag == 0 {
+            self.dismiss(animated: true, completion: nil)
+            
+            navigationController?.popToRootViewController(animated: true)
+       
+        }
+        else if item.tag == 1 {
+           
+            navigationController?.pushViewController(WishListViewController(), animated: true)
+        }
+    }
 }

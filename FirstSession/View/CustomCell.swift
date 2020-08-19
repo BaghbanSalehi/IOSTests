@@ -9,9 +9,9 @@
 import UIKit
 import SnapKit
 import ChameleonFramework
-
-class CustomCell: UITableViewCell {
-    let padding: CGFloat = 5
+import SwipeCellKit
+class CustomCell: SwipeTableViewCell {
+    
     var background : UIView!
     var nameLabel : UILabel!
     var characteristicLabel : UILabel!
@@ -19,16 +19,16 @@ class CustomCell: UITableViewCell {
     
     
     let viewModel = CellViewModel()
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-       
+        
         
         background = UIView(frame: .zero)
         contentView.addSubview(background)
@@ -53,7 +53,7 @@ class CustomCell: UITableViewCell {
         pic.clipsToBounds = false
         background.addSubview(pic)
         
-
+        
         
         setupConstraints()
         
@@ -71,7 +71,7 @@ class CustomCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-       
+        
     }
     
     
@@ -81,7 +81,7 @@ class CustomCell: UITableViewCell {
             $0.top.equalToSuperview()
             $0.bottom.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
-           
+            
         }
         
         pic.snp.makeConstraints{
@@ -97,7 +97,7 @@ class CustomCell: UITableViewCell {
             $0.top.equalToSuperview().offset(10)
             $0.leading.equalTo(pic.snp.trailing).offset(5)
             $0.trailing.equalToSuperview()
-           
+            
             
         }
         
@@ -110,7 +110,7 @@ class CustomCell: UITableViewCell {
             
         }
         
-
+        
         
         
     }
@@ -121,16 +121,26 @@ class CustomCell: UITableViewCell {
         nameLabel.text = viewModel.getTitle()
         characteristicLabel.text = viewModel.getCharacter()
         pic.image = UIImage(named: viewModel.getImage())
-       
- 
+        
+        
+        
+    }
+    
+    func cellConfigGameObject(_ game : GameObject){
+        viewModel.gameObject = game
+        nameLabel.text = viewModel.getTitleObject()
+        characteristicLabel.text = viewModel.getCharacterObject()
+        pic.image = UIImage(named: viewModel.getImageObject())
+        
+        
         
     }
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-    
+        
+        
     }
-
+    
 }

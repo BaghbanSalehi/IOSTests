@@ -13,19 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let tabBar = UITabBarController()
-        let navigationController = UINavigationController()
-        let homeViewController = GamesListViewController()
-        homeViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "house"), tag: 0)
-        navigationController.viewControllers = [homeViewController]
-        tabBar.viewControllers = [navigationController]
-        homeViewController.view.backgroundColor = .white
-        window?.rootViewController = tabBar
+
+        let navigation = UINavigationController()
+        let home = GamesListViewController()
+     
+       
+        navigation.viewControllers = [home]
+       
+        window?.rootViewController = navigation
         
         return true
     }

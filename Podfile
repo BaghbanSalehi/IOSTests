@@ -13,4 +13,8 @@ pod 'SwiftyJSON', '~> 4.0'
 
 pod 'LTMorphingLabel'
 
+pod 'RealmSwift'
+
+pod 'SwipeCellKit'
+
 end

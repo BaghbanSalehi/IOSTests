@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F3610309787E75CA4FE833F /* Pods_FirstSession.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F8CF4C0F14E738A0124551 /* Pods_FirstSession.framework */; };
+		E4119E1B24EC2056007DDF42 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4119E1A24EC2056007DDF42 /* WishListViewController.swift */; };
 		E42D3D8024BC9B360093690A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42D3D7F24BC9B360093690A /* Game.swift */; };
 		E432FEEF24BDF1B500A8C14B /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432FEEE24BDF1B500A8C14B /* GameViewModel.swift */; };
 		E466186524B7318000234C24 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466186424B7318000234C24 /* CustomCell.swift */; };
@@ -19,6 +20,7 @@
 		E49788B9249AA5CE00F07235 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49788B7249AA5CE00F07235 /* LaunchScreen.storyboard */; };
 		E4ED79A224C0802E0028700F /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED79A124C0802E0028700F /* CellViewModel.swift */; };
 		E4ED79A424C0AB310028700F /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED79A324C0AB310028700F /* Company.swift */; };
+		E4F759D224EC402E001363ED /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F759D124EC402E001363ED /* WishListViewModel.swift */; };
 		E4F966FA24E96B8F00FAE5A9 /* gamesList.json in Resources */ = {isa = PBXBuildFile; fileRef = E4F966F924E96B8F00FAE5A9 /* gamesList.json */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,7 @@
 		4EC98D820060AE7A32369C99 /* Pods-FirstSession.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstSession.debug.xcconfig"; path = "Target Support Files/Pods-FirstSession/Pods-FirstSession.debug.xcconfig"; sourceTree = "<group>"; };
 		75986D322E74E88F8D5873AB /* Pods-FirstSession.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstSession.release.xcconfig"; path = "Target Support Files/Pods-FirstSession/Pods-FirstSession.release.xcconfig"; sourceTree = "<group>"; };
 		87F8CF4C0F14E738A0124551 /* Pods_FirstSession.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstSession.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4119E1A24EC2056007DDF42 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		E42D3D7F24BC9B360093690A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E432FEEE24BDF1B500A8C14B /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		E466186424B7318000234C24 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -39,6 +42,7 @@
 		E49788BA249AA5CE00F07235 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4ED79A124C0802E0028700F /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		E4ED79A324C0AB310028700F /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		E4F759D124EC402E001363ED /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		E4F966F924E96B8F00FAE5A9 /* gamesList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gamesList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +82,7 @@
 				E4ED79A124C0802E0028700F /* CellViewModel.swift */,
 				E49386D024C9F77300652A17 /* DetailViewModel.swift */,
 				E432FEEE24BDF1B500A8C14B /* GameViewModel.swift */,
+				E4F759D124EC402E001363ED /* WishListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -88,6 +93,7 @@
 				E49788AE249AA5CC00F07235 /* AppDelegate.swift */,
 				E49788B0249AA5CC00F07235 /* GamesListViewController.swift */,
 				E49386CE24C9F74400652A17 /* DetailViewController.swift */,
+				E4119E1A24EC2056007DDF42 /* WishListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E466186524B7318000234C24 /* CustomCell.swift in Sources */,
+				E4F759D224EC402E001363ED /* WishListViewModel.swift in Sources */,
+				E4119E1B24EC2056007DDF42 /* WishListViewController.swift in Sources */,
 				E42D3D8024BC9B360093690A /* Game.swift in Sources */,
 				E49386D124C9F77300652A17 /* DetailViewModel.swift in Sources */,
 				E432FEEF24BDF1B500A8C14B /* GameViewModel.swift in Sources */,
@@ -415,6 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UP39646M6H;
 				INFOPLIST_FILE = FirstSession/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,6 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UP39646M6H;
 				INFOPLIST_FILE = FirstSession/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -11,6 +11,7 @@ import Foundation
 class CellViewModel {
     
     var game : Game?
+    var gameObject : GameObject?
     
     func getTitle() -> String{
         guard let game = game else{
@@ -34,12 +35,28 @@ class CellViewModel {
 
     }
     
-//    func getRate() -> String {
-//        guard let game = game else{
-//            return ""
-//        }
-//        return "\(game.rate)/10"
-//    }
+    func getTitleObject() -> String{
+         guard let game = gameObject else{
+             return ""
+         }
+         return "\(game.name)"
+     }
+     
+     func getCharacterObject() -> String{
+         guard let game = gameObject else{
+             return ""
+         }
+         return "\(game.characteristics)"
+     }
+     
+     func getImageObject() -> String {
+         guard let game = gameObject else{
+             return ""
+         }
+         return game.imageName
+
+     }
+    
 
     
 }

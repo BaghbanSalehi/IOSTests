@@ -7,8 +7,12 @@
 //
 
 import Foundation
-
-struct Company {
+import RealmSwift
+class Company  {
     
     var name = String()
+}
+class CompanyObject : Object {
+    
+    @objc dynamic var name = String()
 }

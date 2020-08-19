@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Game {
+class Game   {
     
     var name = String()
     var characteristics = String()
@@ -21,7 +22,24 @@ struct Game {
     var url = String()
     var videoUrl = String()
     
- 
-  
+    
+    
+    
+}
+class GameObject : Object  {
+    
+    @objc dynamic var name = String()
+    @objc dynamic var characteristics = String()
+    @objc dynamic  var summary = String()
+    @objc dynamic var developer : CompanyObject?
+    @objc dynamic  var publisher : CompanyObject?
+    @objc dynamic  var year = String()
+    @objc dynamic  var rate = Int()
+    @objc dynamic  var imageName = String()
+    @objc dynamic  var url = String()
+    @objc dynamic   var videoUrl = String()
+    
+    
+    
     
 }

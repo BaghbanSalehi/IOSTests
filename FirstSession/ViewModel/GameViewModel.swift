@@ -14,6 +14,7 @@ import SwiftyJSON
 class GameViewModel {
     
     private var array = [Game]()
+    private var searchArray = [Game]()
     var size = Int()
     
     
@@ -38,14 +39,20 @@ class GameViewModel {
     
     func updateGameData(json : JSON)
     {
-        var game = Game()
+       
         for i in 0..<size {
+            
+            let game = Game()
+            let developer = Company()
+            let publisher = Company()
             
             game.name = json["games"]["\(i)"]["name"].stringValue
             game.characteristics = json["games"]["\(i)"]["characteristics"].stringValue
             game.summary = json["games"]["\(i)"]["summary"].stringValue
-            game.developer.name = json["games"]["\(i)"]["developer"].stringValue
-            game.publisher.name = json["games"]["\(i)"]["publisher"].stringValue
+            developer.name = json["games"]["\(i)"]["developer"].stringValue
+            game.developer = developer
+            publisher.name = json["games"]["\(i)"]["publisher"].stringValue
+            game.publisher = publisher
             game.year = json["games"]["\(i)"]["year"].stringValue
             game.rate = json["games"]["\(i)"]["rate"].intValue
             game.imageName = json["games"]["\(i)"]["imageName"].stringValue
@@ -60,7 +67,7 @@ class GameViewModel {
         
     }
     
-    func game(at index : IndexPath) -> Game {
+    func gameAt(at index : IndexPath) -> Game {
         
         return array[index.row]
         
@@ -75,7 +82,22 @@ class GameViewModel {
         
     }
     
+    func gamesArray() -> [Game] {
+        return array
+    }
     
+    func createSearchedGame(game : [Game]) {
+        searchArray = game
+    }
     
+    func searchedGameAt(at index : IndexPath) -> Game {
+        return searchArray[index.row]
+    }
     
+    func numberOfSearchedGames() -> Int {
+        return searchArray.count
+    }
+    func deleteSearchArray() {
+        searchArray.removeAll()
+     }
 }

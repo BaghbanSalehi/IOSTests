@@ -7,88 +7,168 @@
 //
 
 import UIKit
-import ChameleonFramework
+import LTMorphingLabel
+import RealmSwift
 
 
 
-class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+
+class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+    
+    
     
     let viewModel = GameViewModel()
     let customCell = CustomCell()
-    
     var selectedGame : Game?
-    
+    let searchBar = UISearchBar()
     
     let tableView = UITableView()
     
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+       // print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CustomCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
-        setupTable()
+        
+        
+        searchBar.searchBarStyle = UISearchBar.Style.prominent
+        searchBar.placeholder = " Search..."
+        searchBar.delegate = self
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "wish"), style: .plain, target: self, action: #selector(goToWishList))
+        
+        setupConstraints()
         
     }
     
+ 
     override func viewWillAppear(_ animated: Bool) {
-        tabBarController?.tabBar.isHidden = true
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        let titleLable = LTMorphingLabel()
+        titleLable.text = "PcGamer"
+        titleLable.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLable.morphingEffect = .pixelate
+        titleLable.morphingDuration = 2
+        navigationItem.titleView = titleLable
     }
     
     
-    func setupTable(){
+    func setupConstraints(){
         view.addSubview(tableView)
+        view.addSubview(searchBar)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 0).isActive = true
+        tableView.topAnchor.constraint(equalToSystemSpacingBelow: searchBar.bottomAnchor, multiplier: 0).isActive = true
         tableView.leftAnchor.constraint(equalToSystemSpacingAfter: view.leftAnchor, multiplier: 0).isActive = true
         tableView.rightAnchor.constraint(equalToSystemSpacingAfter: view.rightAnchor, multiplier: 0).isActive = true
         tableView.bottomAnchor.constraint(equalToSystemSpacingBelow: view.bottomAnchor, multiplier: 0).isActive = true
+        
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 0).isActive = true
+        searchBar.leftAnchor.constraint(equalToSystemSpacingAfter: view.leftAnchor, multiplier: 0).isActive = true
+        searchBar.rightAnchor.constraint(equalToSystemSpacingAfter: view.rightAnchor, multiplier: 0).isActive = true
+        searchBar.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.topAnchor, multiplier: 0).isActive = true
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfGames()
+        if viewModel.numberOfSearchedGames() != 0 {
+            return viewModel.numberOfSearchedGames()
+        }else{
+            return viewModel.numberOfGames()
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
-        let game = viewModel.game(at: indexPath)
-        cell.cellConfig(game)
         cell.selectionStyle = .none
-       
         
-        return cell
-        
+        if viewModel.numberOfSearchedGames() != 0{
+            let searchedGame = viewModel.searchedGameAt(at: indexPath)
+            cell.cellConfig(searchedGame)
+            return cell
+        }else{
+            let game = viewModel.gameAt(at: indexPath)
+            cell.cellConfig(game)
+            
+            
+            
+            return cell
+        }
         
         
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedGame = viewModel.game(at: indexPath)
+        selectedGame = viewModel.gameAt(at: indexPath)
         let detailViewController = DetailViewController()
         detailViewController.viewModel.game = selectedGame
+       // searchBar.searchTextField.endEditing(true) // for sake of ios 12 users can't touch searchbar textfield.
+        DispatchQueue.main.async {
+            self.searchBar.resignFirstResponder()
+            }
         navigationController?.pushViewController(detailViewController, animated: true)
-       
-        
-        
-        
+
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
+    
+    //    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        return 110
+    //    }
+    //
+    
+    
+    @objc func goToWishList()  {
+      navigationController?.pushViewController(WishListViewController(), animated: true)
+      }
+      
+    
+}
+extension GamesListViewController : UISearchBarDelegate
+{
+    
+    
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        var searchedGame = [Game]()
+        searchedGame = viewModel.gamesArray().filter({ (game) -> Bool in
+            
+            return game.name.prefix(searchText.count) == searchText
+            
+        })
+        viewModel.createSearchedGame(game: searchedGame)
+        tableView.reloadData()
         
         
         
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
-   }
     
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 110
-//    }
-//
-    
- 
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.deleteSearchArray()
+        tableView.reloadData()
+        searchBar.setShowsCancelButton(false, animated: true)
+        //searchBar.searchTextField.text = ""
+        DispatchQueue.main.async {
+            searchBar.resignFirstResponder()
+        }
+    }
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
     
 }
 
