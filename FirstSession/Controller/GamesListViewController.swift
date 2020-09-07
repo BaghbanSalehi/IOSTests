@@ -110,13 +110,17 @@ class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewD
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedGame = viewModel.gameAt(at: indexPath)
+        if viewModel.numberOfSearchedGames() != 0 {
+            selectedGame = viewModel.searchedGameAt(at: indexPath)
+        }else{
+            selectedGame = viewModel.gameAt(at: indexPath)
+        }
         let detailViewController = DetailViewController()
         detailViewController.viewModel.game = selectedGame
-       // searchBar.searchTextField.endEditing(true) // for sake of ios 12 users can't touch searchbar textfield.
+        // searchBar.searchTextField.endEditing(true) // for sake of ios 12 users can't touch searchbar textfield.
         DispatchQueue.main.async {
             self.searchBar.resignFirstResponder()
-            }
+        }
         navigationController?.pushViewController(detailViewController, animated: true)
 
     }
@@ -146,7 +150,6 @@ extension GamesListViewController : UISearchBarDelegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         var searchedGame = [Game]()
         searchedGame = viewModel.gamesArray().filter({ (game) -> Bool in
-            
             return game.name.prefix(searchText.count) == searchText
             
         })
