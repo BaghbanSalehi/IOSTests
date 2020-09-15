@@ -77,28 +77,16 @@ class DetailViewModel {
     
     func getVideoUrl() -> URL {
         guard let game = game else{
-            return URL(string: "")!
+            return URL(string: "www.apple.com")!
         }
-        
-        return URL(string: game.videoUrl)!
+        if let videoUrl = URL(string: game.videoUrl){
+        return videoUrl
+        }else{
+            return URL(string: "www.apple.com")!
+        }
     }
     
-    //    func getVideoString() -> String {
-    //        guard let game = game else{
-    //            return ""
-    //        }
-    //
-    //        return game.videoUrl
-    //    }
-    
-    //    func getRateInt() -> Int {
-    //        guard let game = game else{
-    //            return 0
-    //        }
-    //
-    //        return game.rate
-    //    }
-    
+ 
     func writeData()  {
         guard let game = game else{
             return

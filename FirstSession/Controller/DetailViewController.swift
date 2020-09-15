@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import AVKit
 import RealmSwift
+import SafariServices
 
 class DetailViewController: UIViewController{
     
@@ -32,20 +33,18 @@ class DetailViewController: UIViewController{
     let realm = try! Realm()
     
     
-    
     let viewModel = DetailViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: true)
-        
+      
         videoPlayerHolder = UIView(frame: .zero)
         view.addSubview(videoPlayerHolder)
+        
         tabbar.delegate = self
         view.addSubview(tabbar)
-        
-        
         
         playerController.view.frame = videoPlayerHolder.bounds
         videoPlayerHolder.addSubview(playerController.view)
@@ -98,7 +97,9 @@ class DetailViewController: UIViewController{
     }
 
  
-        
+    override func viewWillAppear(_ animated: Bool) {
+        playerController.player?.play()
+    }
          
     
     
@@ -207,7 +208,11 @@ class DetailViewController: UIViewController{
         
     }
     @objc func goToStoreButtonPressed(){
-        UIApplication.shared.open(URL(string: viewModel.getUrl())!)
+        //UIApplication.shared.open(URL(string: viewModel.getUrl())!)
+        let svc = SFSafariViewController(url: URL(string: viewModel.getUrl())!)
+        present(svc, animated: true, completion: nil)
+        playerController.player?.pause()
+      
     }
     
     @objc func addToWishList(){

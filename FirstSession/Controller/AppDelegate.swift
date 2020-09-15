@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         window?.makeKeyAndVisible()
 
         let navigation = UINavigationController()
-        let home = GamesListViewController()
+        let home = MainMenuViewController()
      
        
         navigation.viewControllers = [home]

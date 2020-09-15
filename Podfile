@@ -17,4 +17,6 @@ pod 'RealmSwift'
 
 pod 'SwipeCellKit'
 
+pod 'MSPeekCollectionViewDelegateImplementation'
+
 end

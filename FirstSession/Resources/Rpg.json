@@ -1,0 +1,15 @@
+
+{
+  
+  "games":{
+  "0":{
+    "name" : "Need for Speed™ Heat","characteristics" : "Racing, Action, Advanture, Driving, Single-player, Multiplayer","summary":"Hustle by day and risk it all at night in Need for Speed™ Heat, a white-knuckle street racer, where the lines of the law fade as the sun starts to set. By day, Palm City hosts the Speedhunter Showdown, a sanctioned competition where you earn Bank to customize and upgrade your high-performance cars. At night, ramp up the intensity in illicit street races that build your reputation, getting you access to bigger races and better parts. But stay ready – cops are waiting and not all of them play fair.","developer":"Ghost Games","publisher":"Electronic Arts","year":"2020","rate":7, "imageName": "nfs", "url": "https://store.steampowered.com/app/1222680/Need_for_Speed_Heat/","videoUrl": "https://steamcdn-a.akamaihd.net/steam/apps/256786657/movie480.mp4?t=1591282841"
+  },
+  "1":{
+    "name" : "Cyberpunk 2077","characteristics" : "Masterpiece, Open world, Cyberpunk, Action, Single-player","summary":"Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you.","developer":"CD PROJEKT RED","publisher":"CD PROJEKT RED","year":"2020","rate":10, "imageName": "Cyber", "url": "https://store.steampowered.com/app/1091500/Cyberpunk_2077/","videoUrl": "https://steamcdn-a.akamaihd.net/steam/apps/256775079/movie480.mp4?t=1581607833"
+  }
+  
+  
+  }
+}
+

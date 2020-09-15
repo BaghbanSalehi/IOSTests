@@ -41,7 +41,7 @@ class WishListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         
-
+        navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.hidesBackButton = true
         let titleLable = LTMorphingLabel()
         titleLable.text = "WishList"
