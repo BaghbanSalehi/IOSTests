@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import LTMorphingLabel
+import MessageUI
 
 class MainMenuViewController: UIViewController {
     
@@ -16,14 +17,18 @@ class MainMenuViewController: UIViewController {
     private var options = UITableView()
     private var optionsView = UIView()
     private let viewModel = MainMenuViewModel()
+    private let option = OptionViewModel()
     
     private var headerLabel = UILabel()
     private var headerButton = UIButton()
+    private var dragImage = UIImageView()
     
     let screenSize = UIScreen.main.bounds
     
     var panGesture = UIPanGestureRecognizer()
     var optionViewInitialLocation = CGPoint()
+    
+    var tapGesture = UITapGestureRecognizer()
     
     
     override func viewDidLoad() {
@@ -39,23 +44,36 @@ class MainMenuViewController: UIViewController {
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGuestureConfig))
         optionsView = UIView()
         optionsView.isHidden = true
-        optionsView.backgroundColor = .red
         optionsView.isUserInteractionEnabled = true
         optionsView.addGestureRecognizer(panGesture)
         view.addSubview(optionsView)
         
-        options = UITableView(frame: .zero)
+        options = UITableView()
         options.delegate = self
         options.dataSource = self
         options.register(OptionCell.self, forCellReuseIdentifier: "optionCell")
         options.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        options.isScrollEnabled = false
         optionsView.addSubview(options)
+        
+        dragImage = UIImageView()
+        dragImage.image = UIImage(named: "down")
+        dragImage.clipsToBounds = true
+        dragImage.contentMode = .scaleAspectFit
+        dragImage.isUserInteractionEnabled = false
+        dragImage.backgroundColor = .white
+        optionsView.addSubview(dragImage)
         
         setupTableHeaderView()
         
         setupConstraints()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "wish"), style: .plain, target: self, action: #selector(showMore))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(showMore))
+        
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
+        tapGesture.isEnabled = false
+        view.addGestureRecognizer(tapGesture)
+        
         
     }
     
@@ -72,6 +90,8 @@ class MainMenuViewController: UIViewController {
     }
     
     
+    
+    
     func setupConstraints(){
         
         tableView.snp.makeConstraints{
@@ -83,14 +103,23 @@ class MainMenuViewController: UIViewController {
         optionsView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(screenSize.height * 0.7)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            //$0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            $0.bottom.equalToSuperview()
+            
+        }
+        
+        dragImage.snp.makeConstraints{
+            $0.top.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            
             
         }
         
         options.snp.makeConstraints{
-            $0.top.equalToSuperview().inset(40)
+            $0.top.equalTo(dragImage.snp.bottom)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            // $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+            $0.bottom.equalToSuperview()
             
         }
         
@@ -142,24 +171,15 @@ class MainMenuViewController: UIViewController {
                 self.optionsView.isHidden = false
                 self.tableView.alpha = 0.5
                 self.tableView.isUserInteractionEnabled = false
+                self.tapGesture.isEnabled = true
+                
                 
                 
             }, completion: nil)
             
         }
         else{
-            UIView.animate(withDuration: 0.3, animations: {
-                self.optionsView.center.y += self.screenSize.height - 100
-                self.tableView.alpha = 1
-                self.tableView.isUserInteractionEnabled = true
-                
-            }) { (finished) in
-                if finished{
-                    self.optionsView.isHidden = true
-                }
-            }
-            
-            
+            hideOptionsTableView()
             
         }
         
@@ -168,21 +188,46 @@ class MainMenuViewController: UIViewController {
     @objc func panGuestureConfig(_ sender:UIPanGestureRecognizer){
         
         let translation = sender.translation(in: self.view)
-        if translation.y >= 0 {
-            if sender.state == .began{
-                optionViewInitialLocation = optionsView.center
-            }
-            else if sender.state == .changed{
-                
+        
+        if sender.state == .began{
+            optionViewInitialLocation = optionsView.center
+        }
+        else if sender.state == .changed{
+            if optionsView.center.y < 900 && optionsView.center.y >= optionViewInitialLocation.y {
                 optionsView.center.y += translation.y
-                sender.setTranslation(CGPoint.zero, in: self.view)
-                
-            }
-            else if sender.state == .ended{
-                optionsView.center.y = optionViewInitialLocation.y
                 sender.setTranslation(CGPoint.zero, in: self.view)
             }
             
+        }
+        else if sender.state == .ended{
+            
+            if optionsView.center.y > screenSize.height * 0.95 {
+                hideOptionsTableView()
+            }
+            else{
+                optionsView.center.y = optionViewInitialLocation.y
+                sender.setTranslation(CGPoint.zero, in: self.view)
+            }
+        }
+        
+        
+    }
+    
+    @objc func tableViewTapped(){
+        hideOptionsTableView()
+        tapGesture.isEnabled = false
+    }
+    
+    func hideOptionsTableView(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.optionsView.center.y = 999
+            self.tableView.alpha = 1
+            self.tableView.isUserInteractionEnabled = true
+            
+        }) { (finished) in
+            if finished{
+                self.optionsView.isHidden = true
+            }
         }
     }
     
@@ -197,7 +242,7 @@ extension MainMenuViewController : UITableViewDelegate,UITableViewDataSource,Tab
         if tableView == self.tableView{
             return viewModel.numberOfGames()
         }
-        return 0
+        return 1
     }
     
     
@@ -238,7 +283,7 @@ extension MainMenuViewController : UITableViewDelegate,UITableViewDataSource,Tab
         if tableView == self.tableView{
             return 1
         }
-        return 0
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -252,7 +297,9 @@ extension MainMenuViewController : UITableViewDelegate,UITableViewDataSource,Tab
         }
         else if tableView == options {
             let cell = tableView.dequeueReusableCell(withIdentifier: "optionCell", for: indexPath) as! OptionCell
-            
+            cell.selectionStyle = .none
+            let option = self.option.optionAt(index: indexPath)
+            cell.config(option: option)
             return cell
         }
         return UITableViewCell()
@@ -264,7 +311,17 @@ extension MainMenuViewController : UITableViewDelegate,UITableViewDataSource,Tab
         if tableView == self.tableView{
             return 200
         }
-        return 0
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            navigationController?.pushViewController(WishListViewController(), animated: true)
+        }
+        else
+        {
+            sendEmail()
+        }
     }
     func cellTapped(at section : Int, row : Int) {
         let vc = DetailViewController()
@@ -283,7 +340,37 @@ extension MainMenuViewController : UITableViewDelegate,UITableViewDataSource,Tab
         
     }
     
-    
+}
+
+extension MainMenuViewController : MFMailComposeViewControllerDelegate
+{
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail(){
+            let mailVC = MFMailComposeViewController()
+            mailVC.mailComposeDelegate = self
+            mailVC.setToRecipients(["software.developer.bsalehi@gmail.com"])
+            mailVC.setMessageBody("PcGamer is awesome", isHTML: false)
+            self.present(mailVC, animated: true, completion: nil)
+        }
+        else
+        {
+            let failAlert = UIAlertController(title: "Error", message: "Mail services are not available in your device ", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            failAlert.addAction(ok)
+            self.present(failAlert,animated: true)
+        }
+    }
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        controller.dismiss(animated: true, completion: nil)
+        if result.rawValue == MFMailComposeResult.sent.rawValue {
+            let noticeAlert = UIAlertController(title: "Your message has been sent", message: "Thank you for contacting us.We will reach you within 24 hours. ", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            noticeAlert.addAction(ok)
+            self.present(noticeAlert,animated: true)
+        }
+        
+    }
 }
 
 

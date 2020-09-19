@@ -45,7 +45,7 @@ class WishListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         navigationItem.hidesBackButton = true
         let titleLable = LTMorphingLabel()
         titleLable.text = "WishList"
-        titleLable.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLable.font = UIFont(name: "OldLondon", size: 40)
         titleLable.morphingEffect = .sparkle
         titleLable.morphingDuration = 2
         navigationItem.titleView = titleLable
@@ -72,7 +72,10 @@ class WishListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func config()  {
         let goHome = UITabBarItem(title: "", image: UIImage(named: "house"), tag: 0)
-        tabbar.items = [goHome]
+        let goWish = UITabBarItem(title: "", image: UIImage(named: "wish"), tag: 1)
+        let goDetail = UITabBarItem(title: "", image: UIImage(named: "detail"), tag: 2)
+        tabbar.items = [goHome,goDetail,goWish]
+        tabbar.selectedItem = goWish
         
         let perviousViewNumber = (navigationController?.viewControllers.count)! - 2
         if perviousViewNumber > 0 {
@@ -140,9 +143,19 @@ extension WishListViewController : UITabBarControllerDelegate,UITabBarDelegate
 {
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item.tag == 0 {
-            navigationController?.popToRootViewController(animated: true)
-        }
+         if item.tag == 0 {
+             self.dismiss(animated: true, completion: nil)
+             
+             navigationController?.popToRootViewController(animated: true)
+        
+         }
+         else if item.tag == 2 {
+            let detailVC = DetailViewController()
+            if let game = viewModel.game{
+                detailVC.viewModel.game = game
+            }
+             navigationController?.pushViewController(detailVC, animated: true)
+         }
 
     }
 }

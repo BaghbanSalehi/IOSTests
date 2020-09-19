@@ -13,6 +13,7 @@ class WishListViewModel {
     let realm = try! Realm()
     var storedGames : Results<GameObject>?
     var array = [Game]()
+    var game : Game?
     
     func loadGames()  {
         storedGames = realm.objects(GameObject.self)

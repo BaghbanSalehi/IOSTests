@@ -41,7 +41,7 @@ class MainMenuCustomCell: UITableViewCell {
         collectionView.backgroundColor = .white
         //collectionView.isPagingEnabled = true
         behavior = MSCollectionViewPeekingBehavior()
-        behavior.cellSpacing = 0
+        behavior.cellSpacing = 5
         behavior.cellPeekWidth = 10
         collectionView.configureForPeekingBehavior(behavior: behavior)
         collectionView.delegate = self

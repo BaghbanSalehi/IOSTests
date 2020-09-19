@@ -31,19 +31,21 @@ class DetailViewController: UIViewController{
     let screenSize = UIScreen.main.bounds
     var tabbar = UITabBar()
     let realm = try! Realm()
-    
+    let elementColor = UIColor(hexString: "#eeeeee")
     
     let viewModel = DetailViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(hexString: "#101010")
         navigationController?.setNavigationBarHidden(true, animated: true)
       
         videoPlayerHolder = UIView(frame: .zero)
         view.addSubview(videoPlayerHolder)
         
         tabbar.delegate = self
+        tabbar.barTintColor = UIColor(hexString: "#232b2b")
+        tabbar.unselectedItemTintColor = elementColor
         view.addSubview(tabbar)
         
         playerController.view.frame = videoPlayerHolder.bounds
@@ -52,27 +54,34 @@ class DetailViewController: UIViewController{
         
         titleLabel = UILabel(frame: .zero)
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLabel.textColor = elementColor
         view.addSubview(titleLabel)
         
         describText = UITextView(frame: .zero)
         describText.isEditable = false
         describText.font = .systemFont(ofSize: 18)
+        describText.backgroundColor = UIColor(hexString: "#101010")
+        describText.textColor = elementColor
         view.addSubview(describText)
         
         characteristicLabel = UILabel(frame: .zero)
         characteristicLabel.lineBreakMode = .byWordWrapping
         characteristicLabel.numberOfLines = 0
+        characteristicLabel.textColor = elementColor
         view.addSubview(characteristicLabel)
         
         developersLabel = UILabel(frame: .zero)
+        developersLabel.textColor = elementColor
         view.addSubview(developersLabel)
         
         publisherLabel = UILabel(frame: .zero)
+        publisherLabel.textColor = elementColor
         view.addSubview(publisherLabel)
         
         moreInfoLable = UILabel(frame: .zero)
         moreInfoLable.lineBreakMode = .byWordWrapping
         moreInfoLable.numberOfLines = 0
+        moreInfoLable.textColor = elementColor
         view.addSubview(moreInfoLable)
         
         goToStoreButton = UIButton(frame: .zero)
@@ -82,7 +91,7 @@ class DetailViewController: UIViewController{
         
         rateLabel = UILabel(frame: .zero)
         rateLabel.textColor = .white
-        videoPlayerHolder.addSubview(rateLabel)
+        view.addSubview(rateLabel)
         
         wishListButoon = UIButton(frame: .zero)
         wishListButoon.backgroundColor = UIColor(hexString: "#00CDCD")
@@ -100,9 +109,10 @@ class DetailViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         playerController.player?.play()
     }
-         
     
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+      }
     
     
     func setupConstraint(){
@@ -116,10 +126,6 @@ class DetailViewController: UIViewController{
             $0.trailing.leading.equalToSuperview()
             $0.height.equalTo(screenSize.height * 0.25)
             
-        }
-        rateLabel.snp.makeConstraints{
-            $0.bottom.equalToSuperview()
-            $0.trailing.leading.equalToSuperview().inset(20)
         }
         
         titleLabel.snp.makeConstraints{
@@ -150,8 +156,13 @@ class DetailViewController: UIViewController{
             
         }
         
-        moreInfoLable.snp.makeConstraints{
+        rateLabel.snp.makeConstraints{
             $0.top.equalTo(publisherLabel.snp.bottom).offset(20)
+            $0.trailing.leading.equalToSuperview().inset(20)
+        }
+        
+        moreInfoLable.snp.makeConstraints{
+            $0.top.equalTo(rateLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
@@ -189,10 +200,12 @@ class DetailViewController: UIViewController{
         publisherLabel.text = viewModel.getPublisher()
         moreInfoLable.text = "Do you want to know more and buy this game?"
         goToStoreButton.setTitle("Yes,Let's go", for: .normal)
+        goToStoreButton.titleLabel?.font = UIFont(name: "CarnivaleeFreakshow", size: 25)
         goToStoreButton.addTarget(self, action: #selector(goToStoreButtonPressed), for: .touchUpInside)
         
         if !viewModel.alreadyInWishList(){
             wishListButoon.setTitle("Add this to wish list", for: .normal)
+            wishListButoon.titleLabel?.font = UIFont(name: "CarnivaleeFreakshow", size: 25)
             wishListButoon.addTarget(self, action: #selector(addToWishList), for: .touchUpInside)
         }else{
             wishListButoon.setTitle("In wish list", for: .normal)
@@ -202,7 +215,9 @@ class DetailViewController: UIViewController{
         
         let goHome = UITabBarItem(title: "", image: UIImage(named: "house"), tag: 0)
         let goWish = UITabBarItem(title: "", image: UIImage(named: "wish"), tag: 1)
-        tabbar.items = [goHome,goWish]
+        let goDetail = UITabBarItem(title: "", image: UIImage(named: "detail"), tag: 2)
+        tabbar.items = [goHome,goDetail,goWish]
+        tabbar.selectedItem = goDetail
         
         
         
@@ -240,8 +255,12 @@ extension DetailViewController : UITabBarControllerDelegate,UITabBarDelegate
        
         }
         else if item.tag == 1 {
-           
-            navigationController?.pushViewController(WishListViewController(), animated: true)
+            let wishVC = WishListViewController()
+            if let game = viewModel.game{
+            wishVC.viewModel.game = game
+            }
+            navigationController?.pushViewController(wishVC, animated: true)
         }
+        
     }
 }

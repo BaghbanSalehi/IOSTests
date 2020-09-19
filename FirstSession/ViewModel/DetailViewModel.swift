@@ -27,7 +27,7 @@ class DetailViewModel {
             return ""
         }
         
-        return "\(game.rate)/10"
+        return "PcGamer rate : \(game.rate)/10"
     }
     func getDevelopers() -> String {
         guard let game = game else{

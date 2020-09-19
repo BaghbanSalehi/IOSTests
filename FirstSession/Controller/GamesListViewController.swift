@@ -63,12 +63,16 @@ class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         setupConstraints()
         
+   
+        
     }
+ 
     
     
     override func viewWillAppear(_ animated: Bool) {
         
         navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.topItem?.title = ""
         let titleLable = LTMorphingLabel()
         titleLable.text = "Games list"
         titleLable.font = UIFont(name: "OldLondon", size: 40)
@@ -77,6 +81,7 @@ class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewD
         navigationItem.titleView = titleLable
     }
     
+  
     
     func setupConstraints(){
         view.addSubview(tableView)
