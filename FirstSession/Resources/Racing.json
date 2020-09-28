@@ -1,0 +1,293 @@
+{
+
+  "games":{
+
+"0" :{
+
+ "name": "Need for Speed™ Heat",
+
+ "characteristics": "Action, Action, adventure, pvp",
+
+ "summary": "Hustle by day and risk it all at night in Need for Speed™ Heat, a white-knuckle street racer, where the lines of the law fade as the sun starts to set. By day, Palm City hosts the Speedhunter Showdown, a sanctioned competition where you earn Bank to customize and upgrade your high-performance cars. At night, ramp up the intensity in illicit street races that build your reputation, getting you access to bigger races and better parts. But stay ready – cops are waiting and not all of them play fair.",
+
+ "developer": "Ghost Games",
+
+ "publisher": "Electronic Arts",
+
+ "year": "2019",
+
+ "rate": 8,
+
+ "imageName": "nfs",
+
+ "url":"https://store.steampowered.com/app/1222680/Need_for_Speed_Heat/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256786657/movie480_vp9.webm?t=1591282841"
+
+  },
+
+  "1" :{
+
+ "name": "Forza Horizon 4",
+
+ "characteristics": "Multiplayer, Singleplayer, realistic, adventure",
+
+ "summary": "For the first time in the racing and driving genre, experience dynamic seasons in a shared open-world. Explore beautiful scenery, collect over 450 cars, and become a Horizon Superstar in historic Britain.Enjoy the largest and most diverse Horizon car roster yet, including over 100 licensed manufacturers.",
+
+ "developer": "Playground Games",
+
+ "publisher": "Microsoft Studios",
+
+ "year": "2018",
+
+ "rate": 9,
+
+ "imageName": "forza",
+
+ "url":"https://www.microsoft.com/en-US/p/forza-horizon-4-standard-edition/9pnjxvcvwd4k?activetab=pivot:overviewtab",
+
+ "videoUrl" : "http://87.98.202.49/securestream.php/9YtZDLB7pxptBDJXESofmg/42260_540p30.mp4"
+
+  },
+
+    "2" :{
+
+ "name": "DiRT Rally 2.0",
+
+ "characteristics": "Simulation, Automobile Sim, Sports, Driving",
+
+ "summary": "DiRT Rally 2.0 dares you to carve your way through a selection of iconic rally locations from across the globe, in the most powerful off-road vehicles ever made, knowing that the smallest mistake could end your stage.You will need to rely on your instincts with the most immersive and truly focused off-road experience yet, including a new authentic handling model, tyre choice and surface degradation. Power your rally car through real-life off-road environments in New Zealand, Argentina, Spain, Poland, Australia and the USA, with only your co-driver and instincts to guide you.",
+
+ "developer": "Codemasters",
+
+ "publisher": "Codemasters",
+
+ "year": "2019",
+
+ "rate": 7,
+
+ "imageName": "rally",
+
+ "url":"https://store.steampowered.com/app/690790/DiRT_Rally_20/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256778896/movie480.webm?t=1584982754"
+
+  },
+
+    "3" :{
+
+ "name": "WRC 8",
+
+ "characteristics": "Simulation, Sports, Online PvP, singlePlayer",
+
+ "summary": "The WRC championship is the most challenging motor racing competition in the world.With the new dynamic weather system, climatic conditions have true-to-life effects: rain and snowfall is now an important game feature as variable traction, different set-ups for each stage, tyre choice and shrewd use of the weather forecasting team all need to be considered.",
+
+ "developer": "KT Racing",
+
+ "publisher": "Nacon",
+
+ "year": "2020",
+
+ "rate": 6,
+
+ "imageName": "wrc",
+
+ "url":"https://store.steampowered.com/app/1004750/WRC_8_FIA_World_Rally_Championship/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256783634/movie480_vp9.webm?t=1599555243"
+
+  },
+
+    "4" :{
+
+ "name": "The Crew™ 2",
+
+ "characteristics": "Open world, Automobile Sim, MMO, Online Co-op",
+
+ "summary": "Play The CREW® 2 full game for free for 4 hours by downloading the trial!The newest iteration in the revolutionary franchise, The Crew® 2 captures the thrill of the American motorsports spirit in one of the most exhilarating open worlds ever created. Welcome to Motornation, a huge, varied, action-packed, and beautiful playground built for motorsports throughout the entire US of A. Enjoy unrestrained exploration on ground, sea, and sky. From coast to coast, street and pro racers, off-road explorers, and freestylers gather and compete in all kinds of disciplines. Join them in high-octane contests and share every glorious moment with the world.",
+
+ "developer": "Ivory Tower",
+
+ "publisher": "Ubisoft",
+
+ "year": "2018",
+
+ "rate": 8,
+
+ "imageName": "crew",
+
+ "url":"https://store.steampowered.com/app/646910/The_Crew_2/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256686963/movie480.mp4?t=1556554143"
+
+  },
+
+    "5" :{
+
+ "name": "F1® 2020",
+
+ "characteristics": "Sports, Simulation, Online pvp, Singleplayer",
+
+ "summary": "F1® 2020 is the most comprehensive F1® game yet, putting players firmly in the driving seat as they race against the best drivers in the world. For the first time, players can create their own F1® team by creating a driver, then choosing a sponsor, an engine supplier, hiring a teammate and competing as the 11th team on the grid. Build facilities, develop the team over time and drive to the top.",
+
+ "developer": "Codemasters",
+
+ "publisher": "Codemasters",
+
+ "year": "2020",
+
+ "rate": 8,
+
+ "imageName": "f1",
+
+ "url":"https://store.steampowered.com/app/1080110/F1_2020/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256791492/movie480.mp4?t=1593767488"
+
+  },
+
+    "6" :{
+
+ "name": "Wreckfest",
+
+ "characteristics": "Destruction, Automobile Sim, Singleplayer, Online pvp",
+
+ "summary": "Break the rules and take full-contact racing to the limit with Wreckfest!Expect epic crashes, neck-to-neck fights over the finish line and brand-new ways for metal to bend – These are the once-in-a-lifetime moments that can only be achieved in Wreckfest, with its true-to-life physics simulation crafted by legendary developer Bugbear, who also brought you FlatOut 1 & 2!",
+
+ "developer": "Bugbear",
+
+ "publisher": "THQ Nordic",
+
+ "year": "2018",
+
+ "rate": 6,
+
+ "imageName": "wreck",
+
+ "url":"https://store.steampowered.com/app/228380/Wreckfest/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256801068/movie480.mp4?t=1600179476"
+
+  },
+
+    "7" :{
+
+ "name": "Rocket League",
+
+ "characteristics": "Multiplayer, Soccer, Co-op, Competitive",
+
+ "summary": "Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition. Rocket League includes casual and competitive Online Matches, a fully-featured offline Season Mode, special “Mutators” that let you change the rules entirely, hockey and basketball-inspired Extra Modes, and more than 500 trillion possible cosmetic customization combinations.",
+
+ "developer": "Psyonix LLC",
+
+ "publisher": "Psyonix LLC",
+
+ "year": "2015",
+
+ "rate": 6,
+
+ "imageName": "rocket",
+
+ "url":"https://store.steampowered.com/app/252950/Rocket_League/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256801360/movie480.mp4?t=1600362530"
+
+  },
+
+    "8" :{
+
+ "name": "RIDE 3",
+
+ "characteristics": "Motorbike, Sports, Simulation, Online pvp",
+
+ "summary": "Feel the adrenaline and experience the most complete racing ever with RIDE 3!Immerse yourself in a modern 3D environment where you will live side by side with your bike, modifying it mechanically and aesthetically thanks to the new Livery Editor, which will let your dreams run wild. Before starting, don't forget to customise your rider with the right outfit.",
+
+ "developer": "Milestone S.r.l.",
+
+ "publisher": "Milestone S.r.l., Deep Silver",
+
+ "year": "2018",
+
+ "rate": 7,
+
+ "imageName": "ride",
+
+ "url":"https://store.steampowered.com/app/759740/RIDE_3/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256736963/movie480.mp4?t=1543489482"
+
+  },
+
+    "9" :{
+
+ "name": "Need for Speed™ Rivals",
+
+ "characteristics": "Combat Racing, Open world, Singleplayer, Online pvp",
+
+ "summary": "Erase the line between single player and multiplayer in this street-racing rivalry between Cops and Racers. Seamlessly join a world where your friends are already racing and chasing.Imagine your race and your friend’s pursuit colliding, creating a world where no 2 events feel the same. Don’t want to play with others? Simply choose to make Redview County yours alone and dominate the advanced Racer and Cop AI.",
+
+ "developer": "Criterion Software",
+
+ "publisher": "Electronic Arts",
+
+ "year": "2013",
+
+ "rate": 7,
+
+ "imageName": "rivals",
+
+ "url":"https://store.steampowered.com/app/1262600/Need_for_Speed_Rivals/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256787680/movie480_vp9.mp4?t=1591282645"
+
+  },
+
+    "10" :{
+
+ "name": "rFactor 2",
+
+ "characteristics": "Automobile Sim, Sports, Singleplayer, Online pvp",
+
+ "summary": "rFactor 2 is a realistic, easily extendable racing simulation from Studio 397. It offers the latest in vehicle and race customization, great graphics, outstanding multiplayer and the height of racing realism. rFactor 2 features mixed class road racing with ultra realistic dynamics, an immersive sound environment and stunning graphics, perfect for top-level esports and a rich single-player experience.",
+
+ "developer": "Studio 397",
+
+ "publisher": "Studio 397",
+
+ "year": "2013",
+
+ "rate": 6,
+
+ "imageName": "factor",
+
+ "url":"https://store.steampowered.com/app/365960/rFactor_2/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256707366/movie480.mp4?t=1517474945"
+
+  },
+
+    "11" :{
+
+ "name": "Need for Speed™ Payback",
+
+ "characteristics": "Combat racing, Offroad, Action, Co-op",
+
+ "summary": "Set in the underworld of Fortune Valley, you and your crew were divided by betrayal and reunited by revenge to take down The House, a nefarious cartel that rules the city’s casinos, criminals and cops. In this corrupt gambler’s paradise, the stakes are high and The House always wins.",
+
+ "developer": "Ghost Games",
+
+ "publisher": "Electronic Arts",
+
+ "year": "2017",
+
+ "rate": 7,
+
+ "imageName": "payback",
+
+ "url":"https://store.steampowered.com/app/1262580/Need_for_Speed_Payback/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256789562/movie480.mp4?t=1592508913"
+
+  }
+  }
+}

@@ -15,13 +15,23 @@ class MainMenuViewModel {
     
     private var array = [[Game]]()
     private var temp = [Game]()
-    private var headerTitleArray = ["Games we love","RPG","mamad"]
+    private var headerTitleArray = ["Games we love","RPG","Racing","FPS","Games you might have missed"]
     var size = Int()
     
     
     init() {
         
-        if let path = Bundle.main.path(forResource: "gamesList", ofType: "json"){
+        getGames(resource: "gamesList")
+        getGames(resource: "Rpg")
+        getGames(resource: "Racing")
+        getGames(resource: "fps")
+        getGames(resource: "missed")
+        
+    }
+    
+    func getGames(resource: String) {
+        
+        if let path = Bundle.main.path(forResource: resource , ofType: "json"){
             
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
@@ -29,38 +39,18 @@ class MainMenuViewModel {
                 let gameJson : JSON = JSON(jsonResult)
                 size = gameJson["games"].count
                 updateGameData(json: gameJson)
-           
+                
             } catch {
                 // handle error
             }
         }
-        
- 
-             
-       
-        if let path = Bundle.main.path(forResource: "Rpg", ofType: "json"){
-            
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                let gameJson : JSON = JSON(jsonResult)
-                size = gameJson["games"].count
-                updateGameData(json: gameJson)
-            
-            } catch {
-                // handle error
-            }
-        }
-        
-
-       
     }
     
     
     
     func updateGameData(json : JSON)
     {
-       
+        
         for i in 0..<size {
             
             let game = Game()
@@ -85,7 +75,8 @@ class MainMenuViewModel {
             
         }
         
-      array.append(temp)
+        array.append(temp)
+        
         temp.removeAll()
         
     }
@@ -116,5 +107,5 @@ class MainMenuViewModel {
         return headerTitleArray[section]
     }
     
- 
+    
 }

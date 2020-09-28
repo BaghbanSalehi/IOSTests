@@ -1,15 +1,247 @@
 
 {
-  
   "games":{
-  "0":{
-    "name" : "Need for Speed™ Heat","characteristics" : "Racing, Action, Advanture, Driving, Single-player, Multiplayer","summary":"Hustle by day and risk it all at night in Need for Speed™ Heat, a white-knuckle street racer, where the lines of the law fade as the sun starts to set. By day, Palm City hosts the Speedhunter Showdown, a sanctioned competition where you earn Bank to customize and upgrade your high-performance cars. At night, ramp up the intensity in illicit street races that build your reputation, getting you access to bigger races and better parts. But stay ready – cops are waiting and not all of them play fair.","developer":"Ghost Games","publisher":"Electronic Arts","year":"2020","rate":7, "imageName": "nfs", "url": "https://store.steampowered.com/app/1222680/Need_for_Speed_Heat/","videoUrl": "https://steamcdn-a.akamaihd.net/steam/apps/256786657/movie480.mp4?t=1591282841"
+  "0" :{
+ "name": "Marvel's Avengers",
+ "characteristics": "Action, Adventure, RPG, Superhero, Multiplayer",
+ "summary": "Marvel’s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay*. Assemble into a team of up to four players online, master extraordinary abilities, customize a growing roster of Heroes, and defend the Earth from escalating threats",
+ "developer": "Crystal Dynamics, Eidos-Montréal, Nixxes",
+ "publisher": "Square Enix",
+ "year": "2020",
+ "rate": 9,
+ "imageName": "Avengers",
+ "url":"https://store.steampowered.com/app/997070/Marvels_Avengers/",
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256800235/movie480.mp4?t=1599659343"
   },
-  "1":{
-    "name" : "Cyberpunk 2077","characteristics" : "Masterpiece, Open world, Cyberpunk, Action, Single-player","summary":"Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you.","developer":"CD PROJEKT RED","publisher":"CD PROJEKT RED","year":"2020","rate":10, "imageName": "Cyber", "url": "https://store.steampowered.com/app/1091500/Cyberpunk_2077/","videoUrl": "https://steamcdn-a.akamaihd.net/steam/apps/256775079/movie480.mp4?t=1581607833"
+  "1" :{
+ "name": "The Elder Scrolls Online",
+ "characteristics": "MMORPG, Open world, Massive multiplayer, Action RPG",
+ "summary": "Experience an ever-expanding story across all of Tamriel in The Elder Scrolls Online, an award-winning online RPG. Explore a rich, living world with friends or embark upon a solo adventure. Enjoy complete control over how your character looks and plays, from the weapons you wield to the skills you learn – the choices you make will shape your destiny. Welcome to a world without limits.",
+ "developer": "Zenimax Online Studios",
+ "publisher": "Bethesda Softworks",
+ "year": "2014",
+ "rate": 6,
+ "imageName": "eso",
+ "url":"https://store.steampowered.com/app/306130/The_Elder_Scrolls_Online/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256719936/movie480.mp4?t=1529012215"
+  },
+    "2" :{
+ "name": "Fallout 4",
+ "characteristics": "Open world, Post-apocalyptic, Exploration , RPG",
+ "summary": "Bethesda Game Studios, the award-winning creators of Fallout 3 and The Elder Scrolls V: Skyrim, welcome you to the world of Fallout 4 – their most ambitious game ever, and the next generation of open-world gaming.As the sole survivor of Vault 111, you enter a world destroyed by nuclear war. Every second is a fight for survival, and every choice is yours. Only you can rebuild and determine the fate of the Wasteland. Welcome home.",
+ "developer": "Bethesda Game Studios",
+ "publisher": "Bethesda Softworks",
+ "year": "2015",
+ "rate": 9,
+ "imageName": "Fallout",
+ "url":"https://store.steampowered.com/app/377160/Fallout_4/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256658080/movie480.mp4?t=1447378809"
+  },
+    "3" :{
+ "name": "Skyrim",
+ "characteristics": "Open world, RPG, Adventure, Singleplayer",
+ "summary": "Winner of more than 200 Game of the Year Awards, Skyrim Special Edition brings the epic fantasy to life in stunning detail. The Special Edition includes the critically acclaimed game and add-ons with all-new features like remastered art and effects, volumetric god rays, dynamic depth of field, screen-space reflections, and more. Skyrim Special Edition also brings the full power of mods to the PC and consoles. New quests, environments, characters, dialogue, armor, weapons and more – with Mods, there are no limits to what you can experience.",
+ "developer": "Bethesda Game Studios",
+ "publisher": "Bethesda Softworks",
+ "year": "2011",
+ "rate": 10,
+ "imageName": "skyrim",
+ "url":"https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256672841/movie480.mp4?t=1476909226"
+  },
+    "4" :{
+ "name": "Grand Theft Auto V",
+ "characteristics": "Open world, Action, Multiplayer, Singleplayer",
+ "summary": "When a young street hustler, a retired bank robber and a terrifying psychopath find themselves entangled with some of the most frightening and deranged elements of the criminal underworld, the U.S. government and the entertainment industry, they must pull off a series of dangerous heists to survive in a ruthless city in which they can trust nobody, least of all each other.",
+ "developer": "Rockstar North",
+ "publisher": "Rockstar Games",
+ "year": "2015",
+ "rate": 9,
+ "imageName": "gta",
+ "url":"https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/2034504/movie480.mp4?t=1447363689"
+  },
+    "5" :{
+ "name": "Red Dead Redemption 2",
+ "characteristics": "Western, Open world, Adventure, Action",
+ "summary": "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him.",
+ "developer": "Rockstar Games",
+ "publisher": "Rockstar Games",
+ "year": "2019",
+ "rate": 10,
+ "imageName": "Red",
+ "url":"https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256768371/movie480.mp4?t=1574881352"
+  },
+    "6" :{
+ "name": "Watch_Dogs 2",
+ "characteristics": "Open world, Hacking, Stealth, Action",
+ "summary": "Play as Marcus Holloway, a brilliant young hacker living in the birthplace of the tech revolution, the San Francisco Bay Area.Team up with Dedsec, a notorious group of hackers, to execute the biggest hack in history; take down ctOS 2.0, an invasive operating system being used by criminal masterminds to monitor and manipulate citizens on a massive scale.",
+ "developer": "Ubisoft",
+ "publisher": "Ubisoft",
+ "year": "2016",
+ "rate": 9,
+ "imageName": "Dogs",
+ "url":"https://store.steampowered.com/app/447040/Watch_Dogs_2/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256665389/movie480.mp4?t=1465490813"
+  },
+    "7" :{
+ "name": "Borderlands 3",
+ "characteristics": "RPG, Action, Looter Shooter, Online Co-Op",
+ "summary": "The original shooter-looter returns, packing bazillions of guns and an all-new mayhem-fueled adventure! Blast through new worlds and enemies as one of four brand new Vault Hunters – the ultimate treasure-seeking badasses of the Borderlands, each with deep skill trees, abilities, and customization. Play solo or join with friends to take on insane enemies, score loads of loot and save your home from the most ruthless cult leaders in the galaxy.",
+ "developer": "Gearbox Software",
+ "publisher": "2K",
+ "year": "2020",
+ "rate": 9,
+ "imageName": "boarder3",
+ "url":"https://store.steampowered.com/app/397540/Borderlands_3/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256776263/movie480.mp4?t=1582832871"
+  },
+    "8" :{
+ "name": "Wasteland 3",
+ "characteristics": "RPG, Strategy, Turn-Based Combat, Violent",
+ "summary": "In Wasteland 3 you take command of a squad of Desert Rangers, lawmen and women in a post-nuclear world, trying to rebuild society from the ashes. More than a century after the bombs fell, you’re fighting a losing battle to keep your beloved Arizona alive. Then the self-proclaimed Patriarch of Colorado radios, promising aid if you'll do a job he can only entrust to an outsider—rescue his land from the ambitions of his three bloodthirsty children.",
+ "developer": "inXile Entertainment",
+ "publisher": "inXile Entertainment",
+ "year": "2020",
+ "rate": 8,
+ "imageName": "wasteland",
+ "url":"https://store.steampowered.com/app/719040/Wasteland_3/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256759293/movie480.mp4?t=1566375331"
+  },
+    "9" :{
+ "name": "Path of Exile",
+ "characteristics": "Free to Play, Action RPG, Hack and slash, Singleplayer",
+ "summary": "You are an Exile, struggling to survive on the dark continent of Wraeclast, as you fight to earn power that will allow you to exact your revenge against those who wronged you. Created by hardcore gamers, Path of Exile is an online Action RPG set in a dark fantasy world. With a focus on visceral action combat, powerful items and deep character customization, Path of Exile is completely free and will never be pay-to-win.",
+ "developer": "Grinding Gear Games",
+ "publisher": "Grinding Gear Games",
+ "year": "2013",
+ "rate": 6,
+ "imageName": "path",
+ "url":"https://jsoneditoronline.org/#left=local.fufica&right=local.liresu",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256767609/movie480.mp4?t=1574130274"
+  },
+    "10" :{
+ "name": "Kingdom Come: Deliverance",
+ "characteristics": "Medieval, Open world, Realistic, Action",
+ "summary": "You're Henry, the son of a blacksmith. Thrust into a raging civil war, you watch helplessly as invaders storm your village and slaughter your friends and family. Narrowly escaping the brutal attack, you grab your sword to fight back. Avenge the death of your parents and help repel the invading forces!",
+ "developer": "Warhorse Studios",
+ "publisher": "Warhorse Studios, Deep Silver",
+ "year": "2018",
+ "rate": 9,
+ "imageName": "kingdom",
+ "url":"https://store.steampowered.com/app/379430/Kingdom_Come_Deliverance/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256751468/movie480.mp4?t=1560269304"
+  },
+    "11" :{
+ "name": "The Witcher 3",
+ "characteristics": "Open world, Story Rich, Atmospheric, Singleplayer",
+ "summary": "The Witcher: Wild Hunt is a story-driven open world RPG set in a visually stunning fantasy universe full of meaningful choices and impactful consequences. In The Witcher, you play as professional monster hunter Geralt of Rivia tasked with finding a child of prophecy in a vast open world rich with merchant cities, pirate islands, dangerous mountain passes, and forgotten caverns to explore.",
+ "developer": "CD PROJEKT RED",
+ "publisher": "CD PROJEKT RED",
+ "year": "2015",
+ "rate": 10,
+ "imageName": "Witcher",
+ "url":"https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/2039386/movie480.mp4?t=1528288460"
+  },
+    "12" :{
+ "name": "Monster Hunter: World",
+ "characteristics": "Co-op, Open world, Action, Multiplayer",
+ "summary": "Welcome to a new world! Take on the role of a hunter and slay ferocious monsters in a living, breathing ecosystem where you can use the landscape and its diverse inhabitants to get the upper hand. Hunt alone or in co-op with up to three other players, and use materials collected from fallen foes to craft new gear and take on even bigger, badder beasts!",
+ "developer": "CAPCOM Co., Ltd.",
+ "publisher": "CAPCOM Co., Ltd.",
+ "year": "2018",
+ "rate": 8,
+ "imageName": "monster",
+ "url":"https://store.steampowered.com/app/582010/Monster_Hunter_World/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256721440/movie480.mp4?t=1578591650"
+  },
+    "13" :{
+ "name": "Fallout 76",
+ "characteristics": "Dark Comedy, Open world, Multiplayer, MMO",
+ "summary": "Bethesda Game Studios, the award-winning creators of Skyrim and Fallout 4, welcome you to Fallout 76, the online prequel where players can work together, or not, to survive. Under the threat of nuclear annihilation, you'll experience the largest, most dynamic world ever created in the legendary Fallout universe.",
+ "developer": "Bethesda Game Studios",
+ "publisher": "Bethesda Softworks",
+ "year": "2020",
+ "rate": 7,
+ "imageName": "fallout76",
+ "url":"https://store.steampowered.com/app/1151340/Fallout_76/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256776898/movie480.mp4?t=1583434862"
+  },
+    "14" :{
+ "name": "Cyberpunk 2077",
+ "characteristics": "Cyberpunk, Open world, Futuristic, Sci-fi",
+ "summary": "Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you.",
+ "developer": "CD PROJEKT RED",
+ "publisher": "CD PROJEKT RED",
+ "year": "2020",
+ "rate": 10,
+ "imageName": "Cyber",
+ "url":"https://store.steampowered.com/app/1091500/Cyberpunk_2077/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256775103/movie480.mp4?t=1581607800"
+  },
+    "15" :{
+ "name": "Assassin's Creed Odyssey",
+ "characteristics": "Open world, Assassin, Singleplayer, Stealth",
+ "summary": "Experience the action in a whole new light with Tobii Eye Tracking. The Extended View feature gives you a broader perspective of the environment, and the Dynamic Light and Sun Effects immerse you in the sandy dunes according to where you set your sights. Tagging, aiming and locking on your targets becomes a lot more natural when you can do it by looking at them. Let your vision lead the way and enhance your gameplay.Visit the Tobii website to check the list of compatible devices.",
+ "developer": "Ubisoft",
+ "publisher": "Ubisoft",
+ "year": "2018",
+ "rate": 7,
+ "imageName": "assassin",
+ "url":"https://store.steampowered.com/app/812140/Assassins_Creed_Odyssey/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256730995/movie480.mp4?t=1538547062"
+  },
+    "16" :{
+ "name": "Darksiders III",
+ "characteristics": "Hack and Slash, Action, Female Protagonist, Singleplayer",
+ "summary": "Return to an apocalyptic Earth in Darksiders III, a hack-n-slash Action Adventure where players assume the role of FURY in her quest to hunt down and dispose of the Seven Deadly Sins. The most unpredictable and enigmatic of the Four Horsemen, FURY must succeed where many have failed – to bring balance to the forces that now ravage Earth. Darksiders III is the long-anticipated, third chapter in the critically-acclaimed Darksiders franchise",
+ "developer": "Gunfire Games",
+ "publisher": "THQ Nordic",
+ "year": "2018",
+ "rate": 7,
+ "imageName": "darksiders",
+ "url":"https://store.steampowered.com/app/606280/Darksiders_III/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256722174/movie480.mp4?t=1531146002"
+  },
+    "17" :{
+ "name": "State of Decay 2",
+ "characteristics": "Survival, Open world, Zombies, Base Building",
+ "summary": "State of Decay 2 is an open-world survival-fantasy game set just after the zombie apocalypse. Your small community of survivors seeks to rebuild a corner of civilization, and you get to make all the decisions about how that happens.You decide who to recruit to your team, where to settle your community, how to fortify and upgrade your base, and when it’s time to move to greener pastures. You select which survivor to bring along on a scavenging run for the food and ammo you need, and who you’ll use to fight off the zombies attacking your base. You choose how you’ll deal with other people who move into your town. Will you be friendly and welcoming... or will you aggressively defend your territory?",
+ "developer": "Undead Labs",
+ "publisher": "Xbox Game Studios",
+ "year": "2018",
+ "rate": 9,
+ "imageName": "State",
+ "url":"https://store.steampowered.com/app/495420/State_of_Decay_2_Juggernaut_Edition/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256767958/movie480.mp4?t=1574452038"
+  },
+    "18" :{
+ "name": "Horizon Zero Dawn™ Complete Edition",
+ "characteristics": "Action, Open world, Singleplayer, RPG",
+ "summary": "Experience Aloy’s legendary quest to unravel the mysteries of a future Earth ruled by Machines. Use devastating tactical attacks against your prey and explore a majestic open world in this award-winning action RPG!",
+ "developer": "Guerrilla",
+ "publisher": "PlayStation Mobile, Inc.",
+ "year": "2020",
+ "rate": 6,
+ "imageName": "horizon",
+ "url":"https://store.steampowered.com/app/1151640/Horizon_Zero_Dawn_Complete_Edition/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256777357/movie480.mp4?t=1583852856"
+  },
+    "19" :{
+ "name": "Shadow of War",
+ "characteristics": "Open world, Action, Fantasy, Adventure",
+ "summary": "Go behind enemy lines to forge your army, conquer Fortresses and dominate Mordor from within. Experience how the award winning Nemesis System creates unique personal stories with every enemy and follower, and confront the full power of the Dark Lord Sauron and his Ringwraiths in this epic new story of Middle-earth.",
+ "developer": "Monolith Productions",
+ "publisher": "WB Games",
+ "year": "2017",
+ "rate": 8,
+ "imageName": "shadowofwar",
+ "url":"https://store.steampowered.com/app/356190/Middleearth_Shadow_of_War/",
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256680501/movie480.mp4?t=1488326327"
   }
-  
+
   
   }
 }
-

@@ -1,0 +1,343 @@
+{
+
+  "games":{
+
+"0" :{
+
+ "name": "Rainbow Six Siege",
+
+ "characteristics": "FPS, Hero Shooter, Multiplayer, Tactical",
+
+ "summary": "Master the art of destruction and gadgetry in Tom Clancy’s Rainbow Six Siege. Face intense close quarters combat, high lethality, tactical decision making, team play and explosive action within every moment. Experience a new era of fierce firefights and expert strategy born from the rich legacy of past Tom Clancy's Rainbow Six games.",
+
+ "developer": "Ubisoft Montreal",
+
+ "publisher": "Ubisoft",
+
+ "year": "2015",
+
+ "rate": 8,
+
+ "imageName": "rainbow",
+
+ "url":"https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/",
+
+ "videoUrl" :"https://steamcdn-a.akamaihd.net/steam/apps/256713339/movie480.mp4?t=1522850991"
+
+  },
+
+  "1" :{
+
+ "name": "Black Ops III",
+
+ "characteristics": "Multiplayer, FPS, Zombies, Shooter, Action",
+
+ "summary": "Call of Duty: Black Ops III combines three unique game modes: Campaign, Multiplayer, and Zombies, providing fans with the deepest and most ambitious Call of Duty ever.",
+
+ "developer": "Treyarch",
+
+ "publisher": "Activision",
+
+ "year": "2015",
+
+ "rate": 7,
+
+ "imageName": "callof",
+
+ "url":"https://store.steampowered.com/app/311210/Call_of_Duty_Black_Ops_III/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256785837/movie480.mp4?t=1589836574"
+
+  },
+
+    "2" :{
+
+ "name": "DOOM Eternal",
+
+ "characteristics": "Action, FPS, Great Soundtrack, Gore, Violent",
+
+ "summary": "Hell’s armies have invaded Earth. Become the Slayer in an epic single-player campaign to conquer demons across dimensions and stop the final destruction of humanity. The only thing they fear... is you.",
+
+ "developer": "id Software",
+
+ "publisher": "Bethesda Softworks",
+
+ "year": "2020",
+
+ "rate": 9,
+
+ "imageName": "doom",
+
+ "url":"https://store.steampowered.com/app/782330/DOOM_Eternal/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256778598/movie480.mp4?t=1586386363"
+
+  },
+
+    "3" :{
+
+ "name": "Destiny 2",
+
+ "characteristics": "Free to Play, Looter Shooter, FPS, Multiplayer",
+
+ "summary": "Dive into the world of Destiny 2 to explore the mysteries of the solar system and experience responsive first-person shooter combat. Unlock powerful elemental abilities and collect unique gear to customize your Guardian's look and playstyle. Enjoy Destiny 2’s cinematic story, challenging co-op missions, and a variety of PvP modes alone or with friends. Download for free today and write your legend in the stars.",
+
+ "developer": "Bungie",
+
+ "publisher": "Bungie",
+
+ "year": "2019",
+
+ "rate": 8,
+
+ "imageName": "des",
+
+ "url":"https://store.steampowered.com/app/1085660/Destiny_2/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256788320/movie480.mp4?t=1591728813"
+
+  },
+
+    "4" :{
+
+ "name": "Metro Exodus",
+
+ "characteristics": "Post-apocalyptic, Action, Atmospheric, FPS",
+
+ "summary": "A quarter-century after nuclear war devastated the earth, a few thousand survivors still cling to existence beneath the ruins of Moscow, in the tunnels of the Metro.They have struggled against the poisoned elements, fought mutated beasts and paranormal horrors, and suffered the flames of civil war.But now, as Artyom, you must flee the Metro and lead a band of Spartan Rangers on an incredible, continent-spanning journey across post-apocalyptic Russia in search of a new life in the East.",
+
+ "developer": "4A Games",
+
+ "publisher": "Deep Silver",
+
+ "year": "2019",
+
+ "rate": 8,
+
+ "imageName": "metro",
+
+ "url":"https://store.steampowered.com/app/412020/Metro_Exodus/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256739978/movie480.mp4?t=1548170244"
+
+  },
+
+    "5" :{
+
+ "name": "Dying Light",
+
+ "characteristics": "Zombies, Survival Horror, Horror, Online Co-Op",
+
+ "summary": "First-person action survival game set in a post-apocalyptic open world overrun by flesh-hungry zombies. Roam a city devastated by a mysterious virus epidemic. Scavenge for supplies, craft weapons, and face hordes of the infected.",
+
+ "developer": "Techland",
+
+ "publisher": "Techland Publishing",
+
+ "year": "2015",
+
+ "rate": 9,
+
+ "imageName": "dying",
+
+ "url":"https://store.steampowered.com/app/239140/Dying_Light/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/2036854/movie480.mp4?t=1599232816"
+
+  },
+
+    "6" :{
+
+ "name": "Resident Evil 7 ",
+
+ "characteristics": "Horror, Survival Horror, First-Person, Gore",
+
+ "summary": "Fear and isolation seep through the walls of an abandoned southern farmhouse. 7 marks a new beginning for survival horror with the “Isolated View” of the visceral new first-person perspective.",
+
+ "developer": "CAPCOM Co., Ltd.",
+
+ "publisher": "CAPCOM Co., Ltd.",
+
+ "year": "2017",
+
+ "rate": 9,
+
+ "imageName": "res",
+
+ "url":"https://store.steampowered.com/app/418370/Resident_Evil_7_Biohazard/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256665616/movie480.mp4?t=1485771790"
+
+  },
+
+    "7" :{
+
+ "name": "Halo",
+
+ "characteristics": "Great Soundtrack, FPS, Classic, Multiplayer",
+
+ "summary": "The Master Chief’s iconic journey includes six games, built for PC and collected in a single integrated experience where each game is delivered over time. Whether you’re a long-time fan or meeting Spartan 117 for the first time, The Master Chief Collection is the definitive Halo gaming experience.",
+
+ "developer": "343 Industries, Splash Damage",
+
+ "publisher": "Xbox Game Studios",
+
+ "year": "2019",
+
+ "rate": 7,
+
+ "imageName": "halo",
+
+ "url":"https://store.steampowered.com/app/976730/Halo_The_Master_Chief_Collection/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256802011/movie480.mp4?t=1600794343"
+
+  },
+
+    "8" :{
+
+ "name": "Serious Sam 4",
+
+ "characteristics": "Action, Gore, FPS, Adventure, Co-op, Indie",
+
+ "summary": "Serious Sam 4 reignites the classic FPS series in a high-powered prequel loaded with an explosive arsenal, intergalactic carnage, and perfectly timed one-liners.",
+
+ "developer": "Croteam",
+
+ "publisher": "Devolver Digital",
+
+ "year": "2020",
+
+ "rate": 7,
+
+ "imageName": "sam",
+
+ "url":"https://store.steampowered.com/app/257420/Serious_Sam_4/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256802337/movie480.mp4?t=1601068145"
+
+  },
+
+    "9" :{
+
+ "name": "STAR WARS 2",
+
+ "characteristics": "Multiplayer, Shooter, FPS, Third-Person Shooter",
+
+ "summary": "Be the hero in the ultimate Star Wars™ battle fantasy with Star Wars™ Battlefront™ II: Celebration Edition! Get Star Wars Battlefront II and the complete collection of customization content acquirable through in-game purchase from launch up to — and including — items inspired by Star Wars™: THE RISE OF SKYWALKER™*.",
+
+ "developer": "DICE",
+
+ "publisher": "Electronic Arts",
+
+ "year": "2017",
+
+ "rate": 7,
+
+ "imageName": "star",
+
+ "url":"https://store.steampowered.com/app/1237950/STAR_WARS_Battlefront_II/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256789731/movie480.mp4?t=1592407744"
+
+  },
+
+    "10" :{
+
+ "name": "PAYDAY 2",
+
+ "characteristics": "Co-op, Action, FPS, Heist, Looter Shooter",
+
+ "summary": "PAYDAY 2 is an action-packed, four-player co-op shooter that once again lets gamers don the masks of the original PAYDAY crew - Dallas, Hoxton, Wolf and Chains - as they descend on Washington DC for an epic crime spree.",
+
+ "developer": "OVERKILL - a Starbreeze Studio.",
+
+ "publisher": "Starbreeze Publishing AB",
+
+ "year": "2013",
+
+ "rate": 7,
+
+ "imageName": "payday",
+
+ "url":"https://store.steampowered.com/app/218620/PAYDAY_2/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256766497/movie480.mp4?t=1573055178"
+
+  },
+
+    "11" :{
+
+ "name": "Counter-Strike: Global Offensive",
+
+ "characteristics": "FPS, Shooter, Multiplayer, Competitive, PvP",
+
+ "summary": "Counter-Strike: Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).",
+
+ "developer": "Valve, Hidden Path Entertainment",
+
+ "publisher": "Valve",
+
+ "year": "2012",
+
+ "rate": 7,
+
+ "imageName": "cs",
+
+ "url":"https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/81958/movie480.mp4?t=1554409259"
+
+  },
+
+    "12" :{
+
+ "name": "Battlefield ™ V",
+
+ "characteristics": "World War II, FPS, Shooter, Open World, PvP",
+
+ "summary": "Experience WWII as you’ve never seen it before with a vast arsenal, including a catch-up of all weapons and vehicles delivered across year 1 of the Battlefield V Tides of War Chapters. Stand out on the battlefield with the most popular weapon and vehicle skins, and customize your Company with 2 Epic soldier outfits.",
+
+ "developer": "DICE",
+
+ "publisher": "Electronic Arts",
+
+ "year": "2018",
+
+ "rate": 6,
+
+ "imageName": "battle",
+
+ "url":"https://store.steampowered.com/app/1238810/Battlefield__V/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/256794469/movie480.mp4?t=1596658054"
+
+  },
+
+    "13" :{
+
+ "name": "Arma 3",
+
+ "characteristics": "Action, Multiplayer, Military, Simulation, FPS",
+
+ "summary": "Experience true combat gameplay in a massive military sandbox. Deploying a wide variety of single- and multiplayer content, over 20 vehicles and 40 weapons, and limitless opportunities for content creation, this is the PC’s premier military game. Authentic, diverse, open - Arma 3 sends you to war.",
+
+ "developer": "Bohemia Interactive",
+
+ "publisher": "Bohemia Interactive",
+
+ "year": "2013",
+
+ "rate": 7,
+
+ "imageName": "arma",
+
+ "url":"https://store.steampowered.com/app/107410/Arma_3/",
+
+ "videoUrl" : "https://steamcdn-a.akamaihd.net/steam/apps/2029387/movie480.mp4?t=1447358825"
+
+  }
+
+  }
+
+}

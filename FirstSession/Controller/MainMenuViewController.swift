@@ -14,6 +14,7 @@ import MessageUI
 class MainMenuViewController: UIViewController {
     
     private var tableView = UITableView()
+    private var tbView = UIView()
     private var options = UITableView()
     private var optionsView = UIView()
     private let viewModel = MainMenuViewModel()
@@ -34,12 +35,16 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+        tbView = UIView()
+        view.addSubview(tbView)
+        
         tableView = UITableView(frame: .zero, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(MainMenuCustomCell.self, forCellReuseIdentifier: "cell")
         tableView.sectionFooterHeight = 0
-        view.addSubview(tableView)
+        tbView.addSubview(tableView)
         
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGuestureConfig))
         optionsView = UIView()
@@ -72,7 +77,7 @@ class MainMenuViewController: UIViewController {
         
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         tapGesture.isEnabled = false
-        view.addGestureRecognizer(tapGesture)
+        tbView.addGestureRecognizer(tapGesture)
         
         
     }
@@ -86,6 +91,9 @@ class MainMenuViewController: UIViewController {
         titleLable.morphingEffect = .scale
         titleLable.morphingDuration = 2
         navigationItem.titleView = titleLable
+        if !optionsView.isHidden {
+            hideOptionsTableView()
+        }
         
     }
     
@@ -93,7 +101,11 @@ class MainMenuViewController: UIViewController {
     
     
     func setupConstraints(){
-        
+        tbView.snp.makeConstraints{
+            $0.top.equalToSuperview()
+            $0.trailing.leading.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
         tableView.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.leading.trailing.equalToSuperview()
@@ -332,7 +344,6 @@ extension MainMenuViewController : UITableViewDelegate,UITableViewDataSource,Tab
     
     
     @objc func moreGames(sender : UIButton){
-        print(sender.tag)
         let vc = GamesListViewController()
         let selectedCategory = viewModel.gameAt(at: sender.tag)
         vc.viewModel.array = selectedCategory

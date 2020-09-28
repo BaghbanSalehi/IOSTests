@@ -1,0 +1,491 @@
+{
+
+  "games":{
+
+"0" :{
+
+ "name": "Northgard",
+
+ "characteristics": "RTS, Strategy, Colony, SimMultiplayer, Singleplayer",
+
+ "summary": "Northgard is a strategy game based on Norse mythology in which you control a clan of Vikings vying for the control of a mysterious newfound continent.",
+
+ "developer": "Shiro Games",
+
+ "publisher": "Shiro Games",
+
+ "year": "2018",
+
+ "rate": 8,
+
+ "imageName": "north",
+
+ "url":"https://store.steampowered.com/app/466560/Northgard/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256668473/movie480.mp4?t=1507541937"
+
+  },
+
+  "1" :{
+
+ "name": "7 Days to Die",
+
+ "characteristics": "Survival, Zombies, Voxel, Post-apocalyptic, FPS",
+
+ "summary": "7 Days to Die is an open-world game that is a unique combination of first person shooter, survival horror, tower defense, and role-playing games. Play the definitive zombie survival sandbox RPG that came first. Navezgane awaits!",
+
+ "developer": "The Fun Pimps",
+
+ "publisher": "The Fun Pimps",
+
+ "year": "2013",
+
+ "rate": 7,
+
+ "imageName": "7days",
+
+ "url":"https://store.steampowered.com/app/251570/7_Days_to_Die/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256662781/movie480.mp4?t=1460433292"
+
+  },
+
+    "2" :{
+
+ "name": "Gothic® 3",
+
+ "characteristics": "RPG, Open World, Fantasy, Action, Atmospheric",
+
+ "summary": "Myrtana, a world in upheaval: overrun by orcs from the dark lands in the north, King Rhobar is defending Vengard, the former stronghold of the humans, with his last troop of followers. Chaos reigns without: rebels are offering resistance, and the Hashishin of the south are openly collaborating with the orcs.",
+
+ "developer": "Piranha Bytes",
+
+ "publisher": "THQ Nordic",
+
+ "year": "2006",
+
+ "rate": 8,
+
+ "imageName": "gothic",
+
+ "url":"https://store.steampowered.com/app/39500/Gothic_3/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/901191/movie480.mp4?t=1490866901"
+
+  },
+
+    "3" :{
+
+ "name": "The Forest",
+
+ "characteristics": "Open World Survival Craft, Survival, Open World",
+
+ "summary": "As the lone survivor of a passenger jet crash, you find yourself in a mysterious forest battling to stay alive against a society of cannibalistic mutants. Build, explore, survive in this terrifying first person survival horror simulator.",
+
+ "developer": "Endnight Games Ltd",
+
+ "publisher": "Endnight Games Ltd",
+
+ "year": "2018",
+
+ "rate": 9,
+
+ "imageName": "forest",
+
+ "url":"https://store.steampowered.com/app/242760/The_Forest/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256715589/movie480.mp4?t=1525039057"
+
+  },
+
+    "4" :{
+
+ "name": "Project Winter",
+
+ "characteristics": "Survival, Multiplayer, Co-op, Strategy, Adventure",
+
+ "summary": "The perfect game to back-stab your friends. Project Winter is an 8 person multiplayer game focusing on social deception and survival. Communication and teamwork is essential to the survivors’ ultimate goal of escape. Gather resources, repair structures, and brave the wilderness together.",
+
+ "developer": "Other Ocean Interactive",
+
+ "publisher": "Other Ocean Group",
+
+ "year": "2019",
+
+ "rate": 7,
+
+ "imageName": "project",
+
+ "url":"https://store.steampowered.com/app/774861/Project_Winter/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256749016/movie480.mp4?t=1556290263"
+
+  },
+
+    "5" :{
+
+ "name": "Rust",
+
+ "characteristics": "Survival, Crafting, Multiplayer, Open World, Building",
+
+ "summary": "The only aim in Rust is to survive - Overcome struggles such as hunger, thirst and cold. Build a fire. Build a shelter. Kill animals. Protect yourself from other players.",
+
+ "developer": "Facepunch Studios",
+
+ "publisher": "Facepunch Studios",
+
+ "year": "2018",
+
+ "rate": 6,
+
+ "imageName": "rust",
+
+ "url":"https://store.steampowered.com/app/252490/Rust/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256684736/movie480.mp4?t=1518121486"
+
+  },
+
+    "6" :{
+
+ "name": "Scrap Mechanic",
+
+ "characteristics": "Building, Sandbox, Multiplayer, Open World, Co-op",
+
+ "summary": "Enter the creative paradise of Scrap Mechanic! Build fantastic machines, go on adventures with your friends and defend against waves of evil Farmbots in this imaginative multiplayer survival sandbox. With Scrap Mechanic’s powerful creation tools you can engineer your own adventures!",
+
+ "developer": "Axolot Games",
+
+ "publisher": "Axolot Games",
+
+ "year": "2016",
+
+ "rate": 8,
+
+ "imageName": "scrap",
+
+ "url":"https://store.steampowered.com/app/387990/Scrap_Mechanic/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256784649/movie480_vp9.mp4?t=1588870791"
+
+  },
+
+    "7" :{
+
+ "name": "Reckoning",
+
+ "characteristics": "Action, RPG, Action RPG, Fantasy, Singleplayer",
+
+ "summary": "The hit RPG returns! From the minds of the bestselling author R.A. Salvatore, Spawn creator Todd McFarlane, and Elder Scrolls IV: Oblivion lead designer Ken Rolston, comes Kingdoms of Amalur: Re-Reckoning. Remastered with stunning visuals and refined gameplay Re-Reckoning delivers intense, customizable RPG combat inside a sprawling game world.",
+
+ "developer": "KAIKO, Big Huge Games",
+
+ "publisher": "THQ Nordic",
+
+ "year": "2020",
+
+ "rate": 8,
+
+ "imageName": "reckoning",
+
+ "url":"https://store.steampowered.com/app/1041720/Kingdoms_of_Amalur_ReReckoning/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256797110/movie480_vp9.mp4?t=1597755327"
+
+  },
+
+    "8" :{
+
+ "name": "Army Men",
+
+ "characteristics": "Action, Adventure, Classic, RTS",
+
+ "summary": "Every conquering army needs a great leader. Even the plastic ones! Take control as the sergeant in the field, leading your men into the heat of battle in this tactical action game.",
+
+ "developer": "The 3DO Company",
+
+ "publisher": "2K",
+
+ "year": "1998",
+
+ "rate": 9,
+
+ "imageName": "army",
+
+ "url":"https://store.steampowered.com/app/549160/Army_Men/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256703622/movie480.mp4?t=1513811763"
+
+  },
+
+    "9" :{
+
+ "name": "Remnant",
+
+ "characteristics": "Souls-like, Action, RPG, Adventure, Co-op",
+
+ "summary": "The world has been thrown into chaos by an ancient evil from another dimension. As one of the last remnants of humanity, you must set out alone or alongside up to two other survivors to face down hordes of deadly enemies to try to carve a foothold, rebuild, and retake what was lost.",
+
+ "developer": "Gunfire Games",
+
+ "publisher": "Perfect World Entertainment",
+
+ "year": "2019",
+
+ "rate": 7,
+
+ "imageName": "remnant",
+
+ "url":"https://store.steampowered.com/app/617290/Remnant_From_the_Ashes/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256747599/movie480.mp4?t=1554858009"
+
+  },
+
+    "10" :{
+
+ "name": "Hunt: Showdown",
+
+ "characteristics": "Multiplayer, Survival, Horror, Online Co-Op, Shooter",
+
+ "summary": "Savage, nightmarish monsters roam the Louisiana swamps, and you are part of a group of rugged bounty hunters bound to rid the world of their ghastly presence. Banish these creatures from our world, and you will be paid generously—and given the chance to buy more gruesome and powerful weapons. Fail, and death will strip you of both character and gear. Your experience, however, remains in your pool of hunters—called your Bloodline—always.",
+
+ "developer": "Crytek",
+
+ "publisher": "Crytek",
+
+ "year": "2019",
+
+ "rate": 8,
+
+ "imageName": "hunt",
+
+ "url":"https://store.steampowered.com/app/594650/Hunt_Showdown/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256783663/movie480_vp9.mp4?t=1588176470"
+
+  },
+
+    "11" :{
+
+ "name": "Green Hell",
+
+ "characteristics": "Survival, Open World, Survival Craft, Open World",
+
+ "summary": "Green Hell is a sweltering struggle for survival in the Amazonian rainforest. Clinging to life, the player is set on a journey of durability as the effects of solitude wear heavy not only on the body but also the mind. How long can you survive against the dangers of the unknown?",
+
+ "developer": "Creepy Jar",
+
+ "publisher": "Creepy Jar",
+
+ "year": "2019",
+
+ "rate": 8,
+
+ "imageName": "green",
+
+ "url":"https://store.steampowered.com/app/815370/Green_Hell/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256714178/movie480.mp4?t=1526404892"
+
+  },
+
+    "12" :{
+
+ "name": "Dead by Daylight",
+
+ "characteristics": "Horror, Survival Horror, Multiplayer, Online Co-Op",
+
+ "summary": "Dead by Daylight is a multiplayer (4vs1) horror game where one player takes on the role of the savage Killer, and the other four players play as Survivors, trying to escape the Killer and avoid being caught and killed.",
+
+ "developer": "Behaviour Interactive Inc.",
+
+ "publisher": "Behaviour Interactive Inc.",
+
+ "year": "2016",
+
+ "rate": 7,
+
+ "imageName": "dead",
+
+ "url":"https://store.steampowered.com/app/381210/Dead_by_Daylight/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256673265/movie480.mp4?t=1477410909"
+
+  },
+
+    "13" :{
+
+ "name": "Van Helsing",
+
+ "characteristics": "",
+
+ "summary": "RPG, Adventure, Hack and Slash, ActionIndie",
+
+ "developer": "NeocoreGames",
+
+ "publisher": "NeocoreGames",
+
+ "year": "2015",
+
+ "rate": 8,
+
+ "imageName": "van",
+
+ "url":"https://store.steampowered.com/app/400170/The_Incredible_Adventures_of_Van_Helsing_Final_Cut/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256656464/movie480.mp4?t=1447378091"
+
+  },
+
+    "14" :{
+
+ "name": "Company of Heroes",
+
+ "characteristics": "Strategy, World War II, RTS, Action, War, Violent",
+
+ "summary": "Delivering a visceral WWII gaming experience, Company of Heroes redefines RTS by bringing the sacrifice of heroic soldiers, war-ravaged environments, and dynamic battlefields to life. Please visit the Company of Heroes - Legacy Edition page for additional user reviews.",
+
+ "developer": "Relic Entertainment",
+
+ "publisher": "SEGA",
+
+ "year": "2006",
+
+ "rate": 10,
+
+ "imageName": "company",
+
+ "url":"https://store.steampowered.com/app/228200/Company_of_Heroes/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256697740/movie480.mp4?t=1507834592"
+
+  },
+
+    "15" :{
+
+ "name": "Night of the Dead",
+
+ "characteristics": "Early Access, Zombies, Open World, Survival, PvE",
+
+ "summary": "Lucy wakes up from a human experiment and gets trapped in a city covered with zombies. She must survive nightly zombie waves and communicate with a group of survivors to escape from the isolated area.",
+
+ "developer": "jacktostudios",
+
+ "publisher": "jacktostudios",
+
+ "year": "2020",
+
+ "rate": 6,
+
+ "imageName": "night",
+
+ "url":"https://store.steampowered.com/app/1377380/Night_of_the_Dead/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256795621/movie480_vp9.mp4?t=1596780227"
+
+  },
+
+    "16" :{
+
+ "name": "Borderlands 2",
+
+ "characteristics": "Loot, Shooter, Action, Multiplayer, Co-op, FPS",
+
+ "summary": "A new era of shoot and loot is about to begin. Play as one of four new vault hunters facing off against a massive new world of creatures, psychos and the evil mastermind, Handsome Jack. Make new friends, arm them with a bazillion weapons and fight alongside them in 4 player co-op on a relentless quest for revenge and redemption across the undiscovered and unpredictable living planet.",
+
+ "developer": "Gearbox Software",
+
+ "publisher": "2K",
+
+ "year": "2012",
+
+ "rate": 9,
+
+ "imageName": "border",
+
+ "url":"https://store.steampowered.com/app/49520/Borderlands_2/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/2029699/movie480.mp4?t=1447359143"
+
+  },
+
+    "17" :{
+
+ "name": "Shadow of War",
+
+ "characteristics": "Open World, Action, RPG, Fantasy, Singleplayer",
+
+ "summary": "Experience an epic open-world brought to life by the award-winning Nemesis System. Forge a new Ring of Power, conquer Fortresses in massive battles and dominate Mordor with your personal orc army in Middle-earth™: Shadow of War™.",
+
+ "developer": "Monolith Productions",
+
+ "publisher": "WB Games",
+
+ "year": "2017",
+
+ "rate": 8,
+
+ "imageName": "shadow",
+
+ "url":"https://store.steampowered.com/app/356190/Middleearth_Shadow_of_War/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256680501/movie480.mp4?t=1488326327"
+
+  },
+
+    "18" :{
+
+ "name": "They Are Billions",
+
+ "characteristics": "Colony Sim, Base Building, Strategy, Zombies, RTS",
+
+ "summary": "They Are Billions is a Steampunk strategy game set on a post-apocalyptic planet. Build and defend colonies to survive against the billions of the infected that seek to annihilate the few remaining living humans. Can humanity survive after the zombie apocalypse?",
+
+ "developer": "Numantian Games",
+
+ "publisher": "Numantian Games",
+
+ "year": "2019",
+
+ "rate": 7,
+
+ "imageName": "bilion",
+
+ "url":"https://store.steampowered.com/app/644930/They_Are_Billions/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256753058/movie480.mp4?t=1560875080"
+
+  },
+
+    "19" :{
+
+ "name": "Sea of Thieves",
+
+ "characteristics": "Adventure, Action, Multiplayer, Pirates, Open World",
+
+ "summary": "Sea of Thieves offers the essential pirate experience, from sailing and fighting to exploring and looting – everything you need to live the pirate life and become a legend in your own right. With no set roles, you have complete freedom to approach the world, and other players, however you choose.",
+
+ "developer": "Rare Ltd",
+
+ "publisher": "Xbox Game Studios",
+
+ "year": "2020",
+
+ "rate": 7,
+
+ "imageName": "see",
+
+ "url":"https://store.steampowered.com/app/1172620/Sea_of_Thieves/",
+
+ "videoUrl" : "https://cdn.cloudflare.steamstatic.com/steam/apps/256779851/movie480.mp4?t=1585832757"
+
+  }
+
+
+
+  
+
+  }
+
+}
