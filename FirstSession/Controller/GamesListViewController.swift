@@ -49,6 +49,7 @@ class GamesListViewController: UIViewController,UITableViewDelegate,UITableViewD
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(CircleCollectionCell.self, forCellWithReuseIdentifier: "cell")

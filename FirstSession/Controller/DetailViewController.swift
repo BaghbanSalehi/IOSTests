@@ -39,7 +39,7 @@ class DetailViewController: UIViewController{
         super.viewDidLoad()
         view.backgroundColor = UIColor(hexString: "#101010")
         navigationController?.setNavigationBarHidden(true, animated: true)
-      
+        
         videoPlayerHolder = UIView(frame: .zero)
         view.addSubview(videoPlayerHolder)
         
@@ -104,15 +104,15 @@ class DetailViewController: UIViewController{
         
         
     }
-
- 
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         playerController.player?.play()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
-      }
+    }
     
     
     func setupConstraint(){
@@ -148,35 +148,40 @@ class DetailViewController: UIViewController{
         developersLabel.snp.makeConstraints{
             $0.top.equalTo(describText.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(screenSize.height * 0.03)
         }
         
         publisherLabel.snp.makeConstraints{
             $0.top.equalTo(developersLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(screenSize.height * 0.03)
             
         }
         
         rateLabel.snp.makeConstraints{
             $0.top.equalTo(publisherLabel.snp.bottom).offset(20)
             $0.trailing.leading.equalToSuperview().inset(20)
+            $0.height.equalTo(screenSize.height * 0.03)
         }
         
         moreInfoLable.snp.makeConstraints{
             $0.top.equalTo(rateLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(screenSize.height * 0.03)
         }
         
         goToStoreButton.snp.makeConstraints{
-            $0.top.equalTo(moreInfoLable.snp.bottom).offset(20)
+            $0.top.equalTo(moreInfoLable.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(screenSize.height * 0.05)
             
             
         }
         wishListButoon.snp.makeConstraints{
-            $0.top.equalTo(goToStoreButton.snp.bottom).offset(20)
+            $0.top.equalTo(goToStoreButton.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(screenSize.height * 0.05)
+            
             
             
         }
@@ -227,7 +232,7 @@ class DetailViewController: UIViewController{
         let svc = SFSafariViewController(url: URL(string: viewModel.getUrl())!)
         present(svc, animated: true, completion: nil)
         playerController.player?.pause()
-      
+        
     }
     
     @objc func addToWishList(){
@@ -252,12 +257,12 @@ extension DetailViewController : UITabBarControllerDelegate,UITabBarDelegate
             self.dismiss(animated: true, completion: nil)
             
             navigationController?.popToRootViewController(animated: true)
-       
+            
         }
         else if item.tag == 1 {
             let wishVC = WishListViewController()
             if let game = viewModel.game{
-            wishVC.viewModel.game = game
+                wishVC.viewModel.game = game
             }
             navigationController?.pushViewController(wishVC, animated: true)
         }
