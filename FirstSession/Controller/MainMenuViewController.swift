@@ -32,6 +32,7 @@ class MainMenuViewController: UIViewController {
     var tapGesture = UITapGestureRecognizer()
     
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -43,7 +44,9 @@ class MainMenuViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(MainMenuCustomCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(ListTableViewCell.self, forCellReuseIdentifier: "list")
         tableView.sectionFooterHeight = 0
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -20, right: 0)
         tbView.addSubview(tableView)
         
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGuestureConfig))
@@ -110,6 +113,7 @@ class MainMenuViewController: UIViewController {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+           
         }
         
         optionsView.snp.makeConstraints{
@@ -286,26 +290,40 @@ extension MainMenuViewController : UITableViewDelegate,UITableViewDataSource,Tab
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if tableView == self.tableView{
-            return 50
+            return 70
         }
         return 0
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.tableView{
             return 1
         }
+    
         return 2
     }
     
+   
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == self.tableView{
+            if indexPath.section == 4 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "list", for: indexPath) as! ListTableViewCell
+                cell.delegate = self
+                cell.collectionView.tag = indexPath.section
+                let game = viewModel.gameAt(at: indexPath.section)
+                cell.cellConfig(game)
+                return cell
+            }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainMenuCustomCell
             cell.delegate = self
             cell.collectionView.tag = indexPath.section
             let game = viewModel.gameAt(at: indexPath.section)
             cell.cellConfig(game)
             return cell
+            }
+           
         }
         else if tableView == options {
             let cell = tableView.dequeueReusableCell(withIdentifier: "optionCell", for: indexPath) as! OptionCell
@@ -321,6 +339,9 @@ extension MainMenuViewController : UITableViewDelegate,UITableViewDataSource,Tab
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == self.tableView{
+            if indexPath.section == 4 {
+                        return 250
+                    }
             return 200
         }
         return 50

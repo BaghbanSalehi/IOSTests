@@ -43,6 +43,7 @@ class MainMenuCustomCell: UITableViewCell {
         behavior = MSCollectionViewPeekingBehavior()
         behavior.cellSpacing = 5
         behavior.cellPeekWidth = 10
+        
         collectionView.configureForPeekingBehavior(behavior: behavior)
         collectionView.delegate = self
         collectionView.dataSource = self

@@ -15,7 +15,7 @@ class MainMenuViewModel {
     
     private var array = [[Game]]()
     private var temp = [Game]()
-    private var headerTitleArray = ["Games we love","RPG","Racing","FPS","Games you might have missed"]
+    private var headerTitleArray = ["Games we love","RPG","Racing","FPS","Don't miss them"]
     var size = Int()
     
     

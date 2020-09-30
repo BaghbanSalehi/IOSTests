@@ -11,6 +11,7 @@
 		E40353B825124C6000C6DE56 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40353B725124C6000C6DE56 /* Option.swift */; };
 		E40353BA25124CF800C6DE56 /* OptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40353B925124CF800C6DE56 /* OptionViewModel.swift */; };
 		E4119E1B24EC2056007DDF42 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4119E1A24EC2056007DDF42 /* WishListViewController.swift */; };
+		E41F93E4252335A000FCA451 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41F93E3252335A000FCA451 /* ListTableViewCell.swift */; };
 		E42D3D8024BC9B360093690A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42D3D7F24BC9B360093690A /* Game.swift */; };
 		E432FEEF24BDF1B500A8C14B /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432FEEE24BDF1B500A8C14B /* GameViewModel.swift */; };
 		E461F66225134EAB00605958 /* OptionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461F66125134EAB00605958 /* OptionCellViewModel.swift */; };
@@ -21,6 +22,7 @@
 		E49788B1249AA5CC00F07235 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49788B0249AA5CC00F07235 /* GamesListViewController.swift */; };
 		E49788B6249AA5CE00F07235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49788B5249AA5CE00F07235 /* Assets.xcassets */; };
 		E49788B9249AA5CE00F07235 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49788B7249AA5CE00F07235 /* LaunchScreen.storyboard */; };
+		E4BCFCCA2524D718002D8109 /* ListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BCFCC92524D718002D8109 /* ListCollectionCell.swift */; };
 		E4ED79A224C0802E0028700F /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED79A124C0802E0028700F /* CellViewModel.swift */; };
 		E4ED79A424C0AB310028700F /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED79A324C0AB310028700F /* Company.swift */; };
 		E4F759D224EC402E001363ED /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F759D124EC402E001363ED /* WishListViewModel.swift */; };
@@ -46,6 +48,7 @@
 		E40353B725124C6000C6DE56 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		E40353B925124CF800C6DE56 /* OptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewModel.swift; sourceTree = "<group>"; };
 		E4119E1A24EC2056007DDF42 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		E41F93E3252335A000FCA451 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		E42D3D7F24BC9B360093690A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E432FEEE24BDF1B500A8C14B /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		E461F66125134EAB00605958 /* OptionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellViewModel.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		E49788B5249AA5CE00F07235 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E49788B8249AA5CE00F07235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E49788BA249AA5CE00F07235 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4BCFCC92524D718002D8109 /* ListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionCell.swift; sourceTree = "<group>"; };
 		E4ED79A124C0802E0028700F /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		E4ED79A324C0AB310028700F /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		E4F759D124EC402E001363ED /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				E4F9F1C6250A28A1005DB5FB /* MainMenuCustomCell.swift */,
 				E4F9F1C8250A3B99005DB5FB /* MainMenuCollectionViewCell.swift */,
 				E4FCEC3C2510F2FD007FD851 /* OptionCell.swift */,
+				E41F93E3252335A000FCA451 /* ListTableViewCell.swift */,
+				E4BCFCC92524D718002D8109 /* ListCollectionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -339,7 +345,9 @@
 				E49386D124C9F77300652A17 /* DetailViewModel.swift in Sources */,
 				E432FEEF24BDF1B500A8C14B /* GameViewModel.swift in Sources */,
 				E4ED79A424C0AB310028700F /* Company.swift in Sources */,
+				E4BCFCCA2524D718002D8109 /* ListCollectionCell.swift in Sources */,
 				E461F66225134EAB00605958 /* OptionCellViewModel.swift in Sources */,
+				E41F93E4252335A000FCA451 /* ListTableViewCell.swift in Sources */,
 				E4FC6CD9250CE75A00F9474F /* MainMenuViewModel.swift in Sources */,
 				E4FE05792508EE5F00109033 /* CircleCollectionCell.swift in Sources */,
 				E49386CF24C9F74400652A17 /* DetailViewController.swift in Sources */,

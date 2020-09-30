@@ -1,15 +1,24 @@
 //
-//  MainMenuCollectionViewCell.swift
+//  ListCollectionCell.swift
 //  FirstSession
 //
-//  Created by Shayan on 9/10/20.
+//  Created by Shayan on 9/30/20.
 //  Copyright © 2020 fr.epita. All rights reserved.
 //
 
 import UIKit
 import SnapKit
 
-class MainMenuCollectionViewCell: UICollectionViewCell {
+let viewModel = CellViewModel()
+var gameImage = UIImageView()
+var gameName = UILabel()
+var charactrisctic = UILabel()
+var innerStackView = UIStackView()
+var outerStackView = UIStackView()
+
+
+
+class ListCollectionCell: UICollectionViewCell {
     
     let viewModel = CellViewModel()
     var gameImage = UIImageView()
@@ -18,19 +27,22 @@ class MainMenuCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         gameImage.clipsToBounds = true
         gameImage.contentMode = .scaleToFill
-        gameImage.layer.masksToBounds = true
-        gameImage.layer.cornerRadius = 10
-        contentView.addSubview(gameImage)
-        
-     
+        gameImage.layer.cornerRadius = 15
+        gameImage.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+    
         gameName.font = UIFont.boldSystemFont(ofSize: 20)
-        contentView.addSubview(gameName)
+      
+        innerStackView = UIStackView(arrangedSubviews: [gameName, charactrisctic])
+        innerStackView.axis = .vertical
         
-   
-        contentView.addSubview(charactrisctic)
+        outerStackView = UIStackView(arrangedSubviews: [gameImage, innerStackView])
+        outerStackView.translatesAutoresizingMaskIntoConstraints = false
+        outerStackView.alignment = .center
+        outerStackView.spacing = 10
+        contentView.addSubview(outerStackView)
         
         setupConstraints()
         
@@ -39,10 +51,7 @@ class MainMenuCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        gameImage.frame = contentView.bounds
-    }
+    
     func cellConfig(_ game : Game){
         viewModel.game = game
         gameImage.image = UIImage(named: viewModel.getImage())
@@ -52,18 +61,13 @@ class MainMenuCollectionViewCell: UICollectionViewCell {
     }
     
     func setupConstraints(){
-        gameName.snp.makeConstraints{
+        outerStackView.snp.makeConstraints{
+            $0.trailing.leading.equalToSuperview()
             $0.top.equalToSuperview()
-            $0.trailing.leading.equalToSuperview()
-        }
-        charactrisctic.snp.makeConstraints{
-            $0.top.equalTo(gameName.snp.bottom)
-            $0.trailing.leading.equalToSuperview()
         }
         gameImage.snp.makeConstraints{
-            $0.top.equalTo(charactrisctic.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.height.equalTo(60)
+            $0.width.equalTo(60)
         }
     }
     
