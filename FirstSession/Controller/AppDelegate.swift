@@ -19,12 +19,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
 
+/*MARK: This is for using in general way of having Tabbar and navigation controller together in which, navigation controller will be embeded in Tabbar
+  In my app I prefered to use tabbar as part of some views in navigation controller  for sake of better design*/
+        
+//        let tabbar = UITabBarController()
+//
+//        let home = UINavigationController(rootViewController: MainMenuViewController())
+//        let gameList = UINavigationController(rootViewController: GamesListViewController())
+//        let detail = UINavigationController(rootViewController: DetailViewController())
+//        let wish = UINavigationController(rootViewController: WishListViewController())
+//
+//        home.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "house"), tag: 0)
+//       // gameList.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "list"), tag: 1)
+//       // detail.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "detail"), tag: 2)
+//        wish.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "wish"), tag: 3)
+//
+//
+//        tabbar.viewControllers = [home,gameList,detail,wish]
+
         let navigation = UINavigationController()
         let home = MainMenuViewController()
-     
-       
         navigation.viewControllers = [home]
-       
         window?.rootViewController = navigation
         
         return true

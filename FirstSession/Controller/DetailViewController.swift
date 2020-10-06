@@ -107,9 +107,12 @@ class DetailViewController: UIViewController{
     
     
     override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
         playerController.player?.play()
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        playerController.player?.pause()
+    }
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
@@ -119,7 +122,7 @@ class DetailViewController: UIViewController{
         tabbar.snp.makeConstraints{
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             $0.trailing.leading.equalToSuperview()
-            
+
         }
         videoPlayerHolder.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)

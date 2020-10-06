@@ -86,7 +86,7 @@ class MainMenuViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        //tabBarController?.tabBar.isHidden = true
         navigationController?.setNavigationBarHidden(false, animated: true)
         let titleLable = LTMorphingLabel()
         titleLable.text = "PcGamer"

@@ -40,7 +40,7 @@ class WishListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        tabBarController?.tabBar.isHidden = false
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.hidesBackButton = true
         let titleLable = LTMorphingLabel()
@@ -78,8 +78,8 @@ class WishListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         tabbar.selectedItem = goWish
         
         let perviousViewNumber = (navigationController?.viewControllers.count)! - 2
-        if perviousViewNumber > 0 {
-            navigationController?.viewControllers.remove(at: perviousViewNumber)
+        if perviousViewNumber == 0 {
+            tabbar.items?.remove(at: 1)
         }
     }
     
