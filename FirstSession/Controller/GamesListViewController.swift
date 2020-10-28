@@ -197,6 +197,14 @@ extension GamesListViewController : UISearchBarDelegate
         
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if #available(iOS 13.0, *) {
+            searchBar.searchTextField.endEditing(true)
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         viewModel.deleteSearchArray()
         tableView.reloadData()

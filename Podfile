@@ -19,4 +19,6 @@ pod 'SwipeCellKit'
 
 pod 'MSPeekCollectionViewDelegateImplementation'
 
+pod 'ShowTime'
+
 end
